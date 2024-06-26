@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css"> <!-- Vincula o arquivo CSS -->
+    <link rel="stylesheet" href="css/styles.css">
     <title>Login</title>
 </head>
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form action="login.php" method="POST">
+        <form id="loginForm" action="login.php" method="POST" onsubmit="return validateLoginForm()">
             <div class="form-group">
                 <label for="username">Usuário:</label><br>
                 <input type="text" id="username" name="username" required>
@@ -18,8 +18,12 @@
                 <label for="password">Senha:</label><br>
                 <input type="password" id="password" name="password" required>
             </div>
+            <div id="login-error" class="error-message"></div>
             <button type="submit" class="btn">Entrar</button>
         </form>
+        <p>Não tem uma conta? <a href="register.html">Registre-se aqui</a>.</p>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
