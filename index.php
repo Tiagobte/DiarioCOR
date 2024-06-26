@@ -25,6 +25,49 @@ $username = $user['username'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>Página Inicial</title>
+    <style>
+        /* Estilos específicos para o botão de Escala de Sobreaviso */
+        .btn-sobreaviso {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn-sobreaviso:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para o layout básico da página */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .button-group a {
+            margin-right: 10px;
+        }
+
+        .button-group a.btn-logout {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .button-group a.btn-logout:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
 <body class="home">
     <div class="container home">
@@ -34,6 +77,7 @@ $username = $user['username'];
         </div>
         <div class="button-group-container">
             <div class="button-group">
+                <!-- Links existentes -->
                 <a href="https://sintegre.ons.org.br/paginas/meu-perfil/meus-sistemas.aspx" target="_blank">ONS</a>
                 <a href="https://www.ccee.org.br/web/guest/precos/painel-precos" target="_blank">CCEE</a>
                 <a href="http://simepar.br/prognozweb/" target="_blank">Simepar</a>
@@ -48,7 +92,12 @@ $username = $user['username'];
                 <a href="https://web.skype.com/" target="_blank">Skype</a>
                 <a href="https://10.20.20.110/" target="_blank">IHM CAC</a>
                 <a href="https://www.copel.com/mhbweb/paginas/bacia-iguacu.jsf" target="_blank">COPEL Hidrologia</a>
-                <a href="http://10.20.120.5/" target="_blank">INTELBRAS</a>
+                <a href="http://10.20.120.5/" target="_blank">INTELBRAS</a>             
+                <!-- Novo link para a página de Escala de Sobreaviso -->
+                <a href="EscalaSobreaviso.php" class="btn-sobreaviso">Escala de Sobreaviso</a>
+                
+                <!-- Mais links ... -->
+                
                 <a href="logout.php" class="btn-logout">Sair</a>
             </div>
         </div>
