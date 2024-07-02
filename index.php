@@ -1,23 +1,3 @@
-<?php
-// Inicia a sessão
-session_start();
-
-// Verifica se o usuário está logado, caso contrário, redireciona para a página de login
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.html');
-    exit;
-}
-
-// Aqui você pode adicionar lógica para buscar o nome do usuário logado, se necessário
-require_once 'db.php';
-$query = "SELECT username FROM users WHERE id = :id";
-$statement = $pdo->prepare($query);
-$statement->execute([':id' => $_SESSION['user_id']]);
-$user = $statement->fetch(PDO::FETCH_ASSOC);
-$username = $user['username'];
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -26,85 +6,183 @@ $username = $user['username'];
     <link rel="stylesheet" href="css/styles.css">
     <title>Página Inicial</title>
     <style>
-        /* Estilos específicos para o botão de Escala de Sobreaviso */
-        .btn-sobreaviso {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-right: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
 
-        .btn-sobreaviso:hover {
-            background-color: #0056b3;
-        }
-
-        /* Estilos para o layout básico da página */
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-message {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .panel {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .panel h3 {
+            margin-bottom: 10px;
+            color: #333;
             text-align: center;
         }
 
         .button-group {
-            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Alinha os botões à esquerda */
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .button-group a {
-            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+            margin-bottom: 10px;
+            display: inline-block;
         }
 
-        .button-group a.btn-logout {
+        .button-group a:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-logout {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
             background-color: #dc3545;
             color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.3s;
+            display: inline-block;
         }
 
-        .button-group a.btn-logout:hover {
+        .btn-logout:hover {
             background-color: #c82333;
+        }
+
+        .panels-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .ilhas-container {
+            flex: 1 1 65%; /* Ajuste o tamanho para ocupar 65% do espaço */
+            max-width: 65%;
+            display: flex;
+            gap: 20px;
+        }
+
+        .panel {
+            flex: 1 1 calc(50% - 10px);
+            max-width: calc(50% - 10px);
+        }
+
+        .tools-panel {
+            flex: 1 1 30%;
+            max-width: 30%;
+            margin-right: 20px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #666;
         }
     </style>
 </head>
-<body class="home">
-    <div class="container home">
+<body>
+    <div class="container">
         <div class="welcome-message">
             <h2>Bem-vindo à Página Inicial</h2>
             <p><strong>Usuário logado:</strong> <?php echo htmlspecialchars($username); ?></p>
         </div>
-        <div class="button-group-container">
-            <div class="button-group">
-                <!-- Links existentes -->
-                <a href="https://sintegre.ons.org.br/paginas/meu-perfil/meus-sistemas.aspx" target="_blank">ONS</a>
-                <a href="https://www.ccee.org.br/web/guest/precos/painel-precos" target="_blank">CCEE</a>
-                <a href="http://simepar.br/prognozweb/" target="_blank">Simepar</a>
-                <a href="https://stats.uptimerobot.com/2963AIKqz6" target="_blank">Uptime Robot</a>
-                <a href="https://pim.way2.com.br/GraficosHtml5" target="_blank">PIM Way2</a>
-                <a href="https://www.copel.com/mhbweb/paginas/bacia-iguacu.jsf" target="_blank">Copel</a>
-                <a href="http://servidor.ambitec.eng.br:8080/sistema/index.php?class=LoginForm&method=onReload&order=send_date&direction=asc" target="_blank">Ambitec</a>
-                <a href="https://hidro.tach.com.br/index.php" target="_blank">Hidro Tach</a>
-                <a href="https://selinc.com/pt/products/tables/ansi/" target="_blank">SEL Inc.</a>
-                <a href="https://webmail-seguro.com.br/" target="_blank">Acesso ao Webmail</a>
-                <a href="https://www.google.com.br/?hl=pt-BR" target="_blank">Acesso ao navegador</a>
-                <a href="https://web.skype.com/" target="_blank">Skype</a>
-                <a href="https://10.20.20.110/" target="_blank">IHM CAC</a>
-                <a href="https://www.copel.com/mhbweb/paginas/bacia-iguacu.jsf" target="_blank">COPEL Hidrologia</a>
-                <a href="http://10.20.120.5/" target="_blank">INTELBRAS</a>             
-                <!-- Novo link para a página de Escala de Sobreaviso -->
-                <a href="EscalaSobreaviso.php" class="btn-sobreaviso">Escala de Sobreaviso</a>
-                
-                <!-- Mais links ... -->
-                
-                <a href="logout.php" class="btn-logout">Sair</a>
+
+        <div class="panels-container">
+            <div class="tools-panel">
+                <h3>Ferramentas Externas</h3>
+                <div class="button-group">
+                    <a href="#">01 ONS</a>
+                    <a href="#">02 CCEE</a>
+                    <a href="#">03 Simepar</a>
+                    <a href="#">04 Uptime Robot</a>
+                    <a href="#">05 PIM Way2</a>
+                    <a href="#">06 Copel</a>
+                    <a href="#">07 Ambitec</a>
+                    <a href="#">08 Hidro Tach</a>
+                    <a href="#">09 SEL Inc.</a>
+                    <a href="#">10 Acesso ao Webmail</a>
+                    <a href="#">11 Acesso ao navegador</a>
+                    <a href="#">12 Skype</a>
+                    <a href="#">13 IHM CAC</a>
+                    <a href="#">14 COPEL Hidrologia</a>
+                    <a href="#">15 INTELBRAS</a>
+                </div>
+            </div>
+
+            <div class="ilhas-container">
+                <div class="panel">
+                    <h3>Diários de Operação - ILHA 01</h3>
+                    <div class="button-group">
+                        <a href="#">01 PCH Carlos Gonzatto</a>
+                        <a href="#">02 PCH Marco Baldo</a>
+                        <a href="#">03 PCH Rondinha</a>
+                        <a href="#">04 PCH Alto Sucuriú</a>
+                        <a href="#">05 PCH São Francisco</a>
+                        <a href="#">06 UHE Santa Clara</a>
+                        <a href="#">07 Confluência</a>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Diários de Operação - ILHA 02</h3>
+                    <div class="button-group">
+                        <a href="#">08 PCH Bocaiuva</a>
+                        <a href="#">09 PCH Arturo Andreoli</a>
+                        <a href="#">10 PCH São Bartolomeu</a>
+                        <a href="#">11 PCH Gameleira</a>
+                        <a href="#">12 PCH Tamboril</a>
+                        <a href="#">13 PCH Boa Vista</a>
+                        <a href="#">14 CGH Cachoeira</a>
+                        <a href="#">15 UHE Fundão</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> SeuSite. Todos os direitos reservados.</p>
-    </footer>
+        <div style="text-align: center;">
+            <a href="DiarioCor/diario_operacao.php" class="btn-logout">Diário de Operação</a>
+            <a href="DiarioCor/EscalaSobreaviso.php" class="btn-logout">Escala de Sobreaviso</a>
+        </div>
+
+        <footer>
+            <p>&copy; <?php echo date('Y'); ?> SeuSite. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 </body>
 </html>
