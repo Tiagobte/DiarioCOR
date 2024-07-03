@@ -5,9 +5,6 @@ session_start();
 // Inclui o arquivo de conexão com o banco de dados
 require_once 'db.php';
 
-// Inicializa a variável de mensagem de erro
-$error_message = '';
-
 // Verifica se os dados do formulário foram enviados via POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtém os dados do formulário de forma segura
@@ -25,8 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user) {
             // Verifica se a senha digitada corresponde à senha no banco de dados
             if (md5($password) === $user['password']) {
-                // Armazena o ID do usuário na sessão
+                // Armazena o ID e o nome do usuário na sessão
                 $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
 
                 // Redireciona para a página inicial
                 header('Location: index.php');
@@ -51,3 +49,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+

@@ -71,7 +71,8 @@ $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </form>
 
         <br>
-
+        <br>
+        <a href="#" onclick="history.back();">Retornar</a>
         <!-- Tabela de exibição dos registros -->
         <table>
             <thead>
