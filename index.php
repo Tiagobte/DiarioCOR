@@ -1,13 +1,10 @@
 <?php
 session_start();
-
-// Verifica se o usuário está logado
 if (!isset($_SESSION['username'])) {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,126 +14,134 @@ if (!isset($_SESSION['username'])) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
             margin: 0;
             padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .user-info {
+            font-size: 16px;
+        }
+
+        .user-info a {
+            color: white;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        .user-info a:hover {
+            text-decoration: underline;
         }
 
         #painel {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin-top: 20px;
+            padding: 20px;
+            justify-content: center;
         }
 
         .menu-container {
             position: relative;
-            width: 250px;
+            width: 220px;
             border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-container:hover {
+            transform: translateY(-5px);
         }
 
         .menu-container button {
             width: 100%;
+            padding: 15px 10px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
-            background: none;
+            background-color: #4CAF50;
+            color: white;
             border: none;
-            color: #007BFF;
-            padding: 10px;
-            text-transform: uppercase;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        .menu-container button:hover {
+            background-color: #45a049;
         }
 
         .menu-content {
             display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            background: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 10;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
         }
 
         .menu-content a {
-            display: block;
-            padding: 10px;
+            padding: 12px 16px;
             text-decoration: none;
-            color: #333;
+            display: block;
+            color: black;
         }
 
         .menu-content a:hover {
-            background: #f0f0f0;
+            background-color: #ddd;
         }
 
-        #header {
+        .button-container {
             display: flex;
-            justify-content: space-between;
-            width: 80%;
-            max-width: 800px;
-            margin-top: 20px;
-            background-color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #header div {
-            font-size: 16px;
-        }
-
-        #header a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
-
-        #main-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             margin-top: 20px;
         }
 
-        #main-buttons a {
-            text-decoration: none;
-        }
-
-        #main-buttons button {
-            width: 250px;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .button-container .button {
+            width: 220px;
+            padding: 15px 10px;
             cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        #main-buttons button:hover {
-            background-color: #0056b3;
+        .button-container .button:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
-    <div id="header">
-        <div>Usuário logado: <?php echo $_SESSION['username']; ?></div>
-        <div><a href="logout.php">Logout</a></div>
-    </div>
-
+    <header>
+        <h1>Painel de Ferramentas</h1>
+        <div class="user-info">
+            Usuário: <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>
+            <a href="logout.php">Sair</a>
+        </div>
+    </header>
     <div id="painel">
         <div id="ferramentas-internas" class="menu-container">
             <button id="btn-ferramentas-internas">Ferramentas Internas</button>
@@ -190,18 +195,13 @@ if (!isset($_SESSION['username'])) {
                 <a href="#">Link Planilha 5 - Ilha 02</a>
             </div>
         </div>
-    </div>
-
-    <div id="main-buttons">
-        <a href="EscalaSobreaviso.php">
-            <button>Escala de Sobreaviso</button>
-        </a>
-        <a href="diario_operacao_ilha1.php">
-            <button>Diário de Operação - Ilha 01</button>
-        </a>
-        <a href="diario_operacao_ilha2.php">
-            <button>Diário de Operação - Ilha 02</button>
-        </a>
+        
+        <div class="button-container">
+            <button class="button" onclick="window.location.href='diario_operacao_ilha1.php'">Diário de Operação - Ilha 01</button>
+            <button class="button" onclick="window.location.href='diario_operacao_ilha2.php'">Diário de Operação - Ilha 02</button>
+            <button class="button" onclick="window.location.href='EscalaSobreaviso.php'">Escala de Sobreaviso</button>
+            <button class="button" onclick="window.location.href='logout.php'">Logout</button>
+        </div>
     </div>
 
     <script>
@@ -236,3 +236,4 @@ if (!isset($_SESSION['username'])) {
     </script>
 </body>
 </html>
+
