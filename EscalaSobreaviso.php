@@ -121,7 +121,7 @@ $escalas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </table>
 
         <br>
-        <a href="#" onclick="history.back();">Retornar</a>
+        <a href="index.php" onclick="history.back();">Retornar</a>
     </div>
 
     <!-- Script JavaScript -->

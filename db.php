@@ -1,16 +1,24 @@
 <?php
-// Configurações de conexão com o banco de dados
+// Configurações do banco de dados
 $host = 'localhost';
-$db_name = 'diariocor';
+$dbname = 'diariocor';
 $username = 'root';
 $password = '';
 
-// Tentativa de conexão com o banco de dados usando PDO
+// DSN (Data Source Name)
+$dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+
+// Opções de configuração do PDO
+$options = [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES => false,
+];
+
+// Instância do PDO
 try {
-    $pdo = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    echo "Erro de conexão: " . $e->getMessage();
-    die();
+    $pdo = new PDO($dsn, $username, $password, $options);
+} catch (PDOException $e) {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 ?>
