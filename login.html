@@ -5,9 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>Login</title>
+    <style>
+        /* Estilo para o corpo da página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('icons/tela de login.jpg');
+            background-size: cover; /* Cobrir toda a tela */
+            background-position: center; /* Centralizar a imagem */
+            background-repeat: no-repeat; /* Evitar repetição da imagem */
+            background-attachment: fixed; /* Fixar a imagem para que não role com a página */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa a altura total da tela */
+        }
+
+        /* Container para a página de login */
+        .container.login {
+            max-width: 300px; /* Reduz a largura máxima do container */
+            width: 90%; /* Largura de 90% para se ajustar responsivamente */
+            text-align: center; /* Centraliza o conteúdo dentro do container */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+            padding: 15px; /* Espaçamento interno reduzido para o conteúdo */
+            border-radius: 10px; /* Bordas arredondadas */
+            margin-top: 20px; /* Espaçamento superior */
+        }
+
+        /* Estilos para o formulário */
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+
+        /* Estilo para o link de registro */
+        p {
+            margin-top: 10px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container login">
         <h2>Login</h2>
         <form id="loginForm" action="login.php" method="POST" onsubmit="return validateLoginForm()">
             <div class="form-group">
