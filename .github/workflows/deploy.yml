@@ -1,3 +1,5 @@
+# Adicione um comentário para testar o workflow
+
 name: Deploy via FTP
 
 on: 
