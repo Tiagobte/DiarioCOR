@@ -6,20 +6,7 @@
     <title>Painel de Ferramentas</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-image: url('icons/container.jpg');
-            background-size: 130%;
-            background-position: top;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
+       
 
         header {
             background-color: rgba(0, 0, 0, 0.5);
