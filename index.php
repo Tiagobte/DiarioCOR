@@ -4,33 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Ferramentas</title>
-
     <style>
-       
+        /* Mantém o estilo original */
+        .header {
+            display: flex;
+            justify-content: space-between; /* Espaça as imagens nos extremos */
+            align-items: center;
+            padding: 0 20px; /* Adiciona algum espaçamento lateral */
+        }
+        .header img {
+            width: 45px;
+            height: 30px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
 
         header {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 26px;
         }
 
         .user-info {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            margin-right: 20px;
         }
 
         .user-info a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             transition: opacity 0.3s;
         }
@@ -39,27 +53,46 @@
             opacity: 0.8;
         }
 
+        /* Estilo para o botão de logout */
+        .logout-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .logout-button:active {
+            transform: translateY(0);
+        }
+
         #painel {
             padding: 20px;
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
-            overflow-y: auto;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #fff;
             border-radius: 10px;
             margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .menu-container {
             position: relative;
             width: 220px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            overflow: hidden;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
 
@@ -67,32 +100,16 @@
             transform: translateY(-5px);
         }
 
-        .menu-container button {
-            width: 100%;
-            padding: 15px 10px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            outline: none;
-            transition: background-color 0.3s;
-        }
-
-        .menu-container button:hover {
-            background-color: #45a049;
-        }
-
         .menu-content {
             display: none;
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 8px 8px;
             z-index: 1;
         }
 
         .menu-content a {
-            padding: 12px 16px;
+            padding: 12px 20px;
             text-decoration: none;
             display: block;
             color: #333;
@@ -100,12 +117,11 @@
         }
 
         .menu-content a:hover {
-            background-color: #ddd;
+            background-color: #e9ecef;
         }
 
         .menu-content a.active {
-            background-color: #4CAF50;
-            color: white;
+            color: #fff;
         }
 
         .button-container {
@@ -118,12 +134,11 @@
 
         .button-container .button {
             width: 220px;
-            padding: 15px 10px;
+            padding: 15px;
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
-            background-color: #4CAF50;
-            color: white;
+            color: #fff;
             border: none;
             border-radius: 8px;
             outline: none;
@@ -131,67 +146,40 @@
         }
 
         .button-container .button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
             transform: translateY(-5px);
-        }
-
-        #clientes {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            text-align: left;
-            width: auto;
-        }
-
-        #clientes h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        .logos-clientes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .logos-clientes img {
-            width: 70px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: opacity 0.3s ease-out;
-            opacity: 0;
-        }
-
-        .loaded {
-            opacity: 1 !important;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="header">
+        <!-- Imagem à esquerda -->
+        <img src="icons/logo-mcq.png" alt="Logo da Empresa Esquerda">
+        
+        <!-- Título centralizado -->
         <h1>Painel de Ferramentas</h1>
+        
+        <!-- Botão de logout à direita -->
+        <button class="logout-button">Logout</button>
+    </div>
+    <header>
+    
         <div class="user-info">
             <?php if (!empty($username)) : ?>
                 Usuário: <strong><?php echo $username; ?></strong>
             <?php endif; ?>
         </div>
-        <button class="button" onclick="window.location.href='logout.php'">Logout</button>
+       
     </header>
     <div id="painel">
         <div id="ferramentas-internas" class="menu-container">
             <button id="btn-ferramentas-internas">Ferramentas Internas</button>
             <div class="menu-content">
-                <a href="diario_operacao_ilha1.php">Diário de Operação - Ilha 01</a>
-                <a href="diario_operacao_ilha2.php">Diário de Operação - Ilha 02</a>
-                <a href="EscalaSobreaviso.php">Escala de Sobreaviso</a>
                 <a href="agenda_mcq.php" class="button">Agenda</a>
-                <a href="escala_sobreaviso.php"><button>Escala de Sobreaviso</button></a>
-                <a href="configuracoes.php">Configurações</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EnYHmPa5YMNFgdi2VrVovzMB_XoXLS1_aE0G2w2LWIvaCQ?e=GopbiT" class="button" target="_blank">Relatorios de Ocorrências</a>
             </div>
         </div>
-
+     
         <div id="ferramentas-externas" class="menu-container">
             <button id="btn-ferramentas-externas">Ferramentas Externas</button>
             <div class="menu-content">
@@ -207,6 +195,24 @@
                 <a href="https://webmail-seguro.com.br/" target="_blank">10 Acesso ao Webmail</a>
             </div>
         </div>
+        <div id="ferramentas-externas" class="menu-container">
+            <button id="btn-ferramentas-externas">Previsão de Chuvas</button>
+            <div class="menu-content">
+                <a href="http://www.simepar.br/prognozweb/alto_sucuriu/forecast_by_counties/5002951" target="_blank">Previsão do tempo - ASU / Chapadão do Sul - MS.</a>
+                <a href="http://www.simepar.br/prognozweb/bocaiuva/forecast_by_counties/5101902" target="_blank">Previsão do tempo - BOC / Branorte - MT.</a>
+                <a href="http://www.simepar.br/prognozweb/sao_francisco/forecast_by_counties/4127700" target="_blank">Previsão do tempo / SFR - Toledo- PR.</a>
+                <a href="http://www.simepar.br/prognozweb/fozchopim/forecast_by_counties/4106571" target="_blank">Previsão do tempo - ART / Cruzeiro do Iguaçu - PR</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/4332/turvo-pr" target="_blank">Previsão do tempo - BVI & CAC - Turvo - PR</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/1329/prudentopolis-pr" target="_blank">Previsão do tempo - CON / Prudentópolis - PR</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2947/camponovo-rs" target="_blank">Previsão do tempo - CGZ / Campo Novo - RS</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - MBO / Braga - RS</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - RON / Passos Maia - SC</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - SBO / Luziânia - GO</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - TBI / Cristalina - GO</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - GAM / Cristalina - GO</a>
+            </div>
+        </div>
+
 
         <div id="planilhas-ilha1" class="menu-container">
             <button id="btn-planilhas-ilha1">Planilhas Diárias de Operação - Ilha 01</button>
@@ -220,7 +226,6 @@
                 <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20Elejor%2FUHE%20e%20CGH%20Santa%20Clara%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">07 UHE Santa Clara</a>
             </div>
         </div>
-
         <div id="planilhas-ilha2" class="menu-container">
             <button id="btn-planilhas-ilha2">Planilhas Diárias de Operação - Ilha 02</button>
             <div class="menu-content">
@@ -233,57 +238,27 @@
                 <a href="https://mcqcombr-my.sharepoint.com/my?id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20Tradener%2FPCH%20Gameleira%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">14 PCH Gameleira</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:x:/r/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B44F6C649-C9C3-450A-8103-9F90F1FC5CB0%7D&file=PDO%20-%20PCH%20SBGER%20(Tamboril)%20-%2007-2024.xlsx&action=default&mobileredirect=true&wdsle=0" target="_blank">15 PCH Tamboril</a>
 
-           
-           
             </div>
         </div>
     </div>
 
-    <div id="clientes">
-        <h2>Clientes</h2>
-        <div class="logos-clientes">
-            <img src="icons\clientes\BrascanEnergética.jpg" alt="BrascanEnergética">
-            <img src="icons\clientes\CESA-no-bg.png" alt="CER">
-            <img src="icons\clientes\ELEJOR.jpg" alt="ELEJOR">
-            <img src="icons\clientes\ESCOELETRIC.jpg" alt="ESCOELETRI">
-            <img src="icons\clientes\ETec.jpg" alt="ETec">
-            <img src="icons\clientes\grupoPetrópolis.jpg" alt="grupoPetrópolis">
-            <img src="icons\clientes\JMalucelli.jpg" alt="JMalucelli">
-            <img src="icons\clientes\logo-tradener-comerc-azul.jpg" alt="Tradenner">
-
-    </div>
-
-    <script>
-        document.getElementById('btn-ferramentas-internas').addEventListener('click', function () {
-            var menu = document.getElementById('ferramentas-internas').querySelector('.menu-content');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        });
-
-        document.getElementById('btn-ferramentas-externas').addEventListener('click', function () {
-            var menu = document.getElementById('ferramentas-externas').querySelector('.menu-content');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        });
-
-        document.getElementById('btn-planilhas-ilha1').addEventListener('click', function () {
-            var menu = document.getElementById('planilhas-ilha1').querySelector('.menu-content');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        });
-
-        document.getElementById('btn-planilhas-ilha2').addEventListener('click', function () {
-            var menu = document.getElementById('planilhas-ilha2').querySelector('.menu-content');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        });
-
-        window.addEventListener('load', function () {
-            const logos = document.querySelectorAll('.logos-clientes img');
-            logos.forEach(logo => {
-                logo.onload = () => {
-                    logo.classList.add('loaded');
-                };
-                // Check if the image is already loaded (for cached images)
-                if (logo.complete) {
-                    logo.classList.add('loaded');
+ 
+        <script>
+        document.querySelectorAll('.menu-container button').forEach(button => {
+            button.addEventListener('click', () => {
+                const menuContent = button.nextElementSibling;
+                if (menuContent.style.display === 'block') {
+                    menuContent.style.display = 'none';
+                } else {
+                    menuContent.style.display = 'block';
                 }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.logos-clientes img');
+            images.forEach(img => {
+                img.onload = () => img.classList.add('loaded');
             });
         });
     </script>

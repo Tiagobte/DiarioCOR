@@ -1,20 +1,24 @@
 <?php
-$host = '127.0.0.1';
-$db = 'diariocor';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
+// Conexão com o banco de dados
+require 'db.php';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
+// Dados do formulário
+$username = $_POST['username'];
+$password = $_POST['password'];
+$email = $_POST['email'];
+$name = $_POST['name'];
+$phone = $_POST['phone']; // Novo campo
+
+// Hash da senha
+$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    // Preparar e executar a consulta
+    $stmt = $pdo->prepare('INSERT INTO users (username, password_hash, email, name, phone) VALUES (?, ?, ?, ?, ?)');
+    $stmt->execute([$username, $password_hash, $email, $name, $phone]);
+
+    echo "Usuário cadastrado com sucesso!";
 } catch (PDOException $e) {
-    die('Erro de conexão: ' . $e->getMessage());
+    echo "Erro ao cadastrar usuário: " . $e->getMessage();
 }
 ?>
