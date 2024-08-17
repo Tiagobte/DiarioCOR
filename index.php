@@ -4,182 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Ferramentas</title>
-    <style>
-        /* Mantém o estilo original */
-        .header {
-            display: flex;
-            justify-content: space-between; /* Espaça as imagens nos extremos */
-            align-items: center;
-            padding: 0 20px; /* Adiciona algum espaçamento lateral */
-        }
-        .header img {
-            width: 45px;
-            height: 30px;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 26px;
-        }
-
-        .user-info {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .user-info a {
-            color: #fff;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .user-info a:hover {
-            opacity: 0.8;
-        }
-
-        /* Estilo para o botão de logout */
-        .logout-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .logout-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-        }
-
-        .logout-button:active {
-            transform: translateY(0);
-        }
-
-        #painel {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            background-color: #fff;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu-container {
-            position: relative;
-            width: 220px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .menu-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .menu-content {
-            display: none;
-            background-color: #f8f9fa;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            border-radius: 0 0 8px 8px;
-            z-index: 1;
-        }
-
-        .menu-content a {
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-            color: #333;
-            transition: background-color 0.3s;
-        }
-
-        .menu-content a:hover {
-            background-color: #e9ecef;
-        }
-
-        .menu-content a.active {
-            color: #fff;
-        }
-
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .button-container .button {
-            width: 220px;
-            padding: 15px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            outline: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .button-container .button:hover {
-            background-color: #0056b3;
-            transform: translateY(-5px);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <!-- Imagem à esquerda -->
-        <img src="icons/logo-mcq.png" alt="Logo da Empresa Esquerda">
-        
-        <!-- Título centralizado -->
-        <h1>Painel de Ferramentas</h1>
-        
-        <!-- Botão de logout à direita -->
-        <button class="logout-button">Logout</button>
-    </div>
-    <header>
-    
-        <div class="user-info">
-            <?php if (!empty($username)) : ?>
-                Usuário: <strong><?php echo $username; ?></strong>
-            <?php endif; ?>
-        </div>
+<header>
+    <img src="icons/logo-mcq.png" alt="Logo da Empresa Esquerda" class="logo-left">
+    <h1>Centro de Operação Remota - Painel de Ferramentas</h1>
+    <form action="logout.php" method="POST">
+    <button type="submit" class="menu-button">Sair</button>
+</form>
+
+<aside class="sidebar">
+    <!-- Conteúdo da sidebar -->
+</aside>
+
+<script>
+function toggleSidebar() {
+    const sidebar = document.querySelector('aside.sidebar');
+    sidebar.classList.toggle('visible');
+}
+</script>
+
+        </form>
+    <aside class="sidebar">
        
-    </header>
+</header>
+
+   
+    <!-- Conteúdo do painel -->
     <div id="painel">
-        <div id="ferramentas-internas" class="menu-container">
+        <div id="Ferramentas-Internas" class="menu-container">
             <button id="btn-ferramentas-internas">Ferramentas Internas</button>
             <div class="menu-content">
                 <a href="agenda_mcq.php" class="button">Agenda</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EnYHmPa5YMNFgdi2VrVovzMB_XoXLS1_aE0G2w2LWIvaCQ?e=GopbiT" class="button" target="_blank">Relatorios de Ocorrências</a>
             </div>
         </div>
-     
+        <!-- Seus containers e botões aqui -->
         <div id="ferramentas-externas" class="menu-container">
             <button id="btn-ferramentas-externas">Ferramentas Externas</button>
             <div class="menu-content">
@@ -241,26 +102,364 @@
             </div>
         </div>
     </div>
-
- 
-        <script>
-        document.querySelectorAll('.menu-container button').forEach(button => {
-            button.addEventListener('click', () => {
-                const menuContent = button.nextElementSibling;
-                if (menuContent.style.display === 'block') {
-                    menuContent.style.display = 'none';
-                } else {
-                    menuContent.style.display = 'block';
-                }
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('.logos-clientes img');
-            images.forEach(img => {
-                img.onload = () => img.classList.add('loaded');
-            });
-        });
-    </script>
+    </div>
+   
 </body>
 </html>
+
+    <style>
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('icons/container.jpg');
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-size: auto; /* Mantém o tamanho original da imagem */
+    background-position: center; /* Centraliza a imagem */
+    margin: 0; /* Remove margens padrão */
+    height: 100vh; /* Garante que o body tenha a altura total da tela */
+}
+
+
+/* CSS para o menu lateral que aparece ao passar o mouse */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Evita rolagem horizontal quando o menu estiver visível */
+}
+
+aside.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Inicialmente escondido à esquerda */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Fundo transparente */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.3s ease; /* Suave transição para abrir e fechar o menu */
+    backdrop-filter: blur(10px); /* Adiciona efeito de desfoque ao fundo */
+}
+
+aside.sidebar:hover {
+    left: 0; /* Mostra o menu quando o ponteiro do mouse está sobre ele */
+}
+
+aside .logout-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff; /* Cor azul */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
+}
+
+aside .logout-button:hover {
+    background-color: #0056b3; /* Cor azul escuro ao passar o mouse */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Intensifica a sombra ao passar o mouse */
+}
+
+aside .menu {
+    margin-top: 20px;
+}
+
+aside .menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+aside .menu a:hover {
+    background-color: #444;
+}
+
+main {
+    margin-left: 250px; /* Espaço suficiente para o menu lateral */
+    padding: 20px;
+}
+
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o título horizontalmente */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+header .logo-left {
+    position: fixed; /* Fixar a posição na tela */
+    bottom: 20px; /* Alinha a imagem a 20px do fundo da tela */
+    left: 20px; /* Alinha a imagem a 20px do lado esquerdo da tela */
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    z-index: 1; /* Garante que a imagem não sobreponha outros elementos */
+}
+
+
+header .logo-right
+
+header .logo-left {
+    left: 50px;
+}
+
+header .logo-right {
+    right: 20px;
+}
+
+header h1 {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    z-index: 2; /* Garante que o título fique acima das imagens */
+}
+
+.logout-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 10px;
+    right: 120px; /* Posiciona o botão a uma distância da borda direita */
+    z-index: 2; /* Garante que o botão fique acima das imagens */
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+}
+
+/* Estilo do painel principal */
+#painel {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos containers de menu e outros elementos */
+.menu-container {
+    position: relative;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.menu-container:hover {
+    transform: translateY(-5px);
+}
+
+.menu-container button {
+    width: 100%;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.menu-container button:hover {
+    background-color: #45a049;
+}
+
+.menu-content {
+    display: none;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.menu-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.menu-content a:hover {
+    background-color: #ddd;
+}
+
+.menu-content a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-container .button {
+    width: 220px;
+    padding: 15px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-container .button:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+}
+
+#clientes {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+    width: auto;
+}
+
+#clientes h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.logos-clientes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logos-clientes img {
+    width: 70px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.loaded {
+    opacity: 1 !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #painel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-container {
+        width: 100%;
+    }
+
+    .button-container .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-left, .logo-right {
+        position: relative;
+        width: 60px; /* Ajuste conforme necessário */
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .logout-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        right: 20px; /* Ajuste para ficar dentro da tela em dispositivos menores */
+    }
+}
+
+    </style>
+        <script>
+    document.addEventListener('DOMContentLoaded', () => {
+                const buttons = document.querySelectorAll('.button-container .button');
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const menuContent = button.nextElementSibling;
+                        menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+                    });
+                });
+            });
+    
+                // Script para abrir e fechar os menus
+            document.querySelectorAll('.menu-container button').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.parentElement.classList.toggle('open');
+                });
+            });
+            
+            document.querySelectorAll('.menu-container button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const menuContent = button.nextElementSibling;
+                    if (menuContent.style.display === 'block') {
+                        menuContent.style.display = 'none';
+                    } else {
+                        menuContent.style.display = 'block';
+                    }
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const images = document.querySelectorAll('.logos-clientes img');
+                images.forEach(img => {
+                    img.onload = () => img.classList.add('loaded');
+                });
+            });
+            
+    </script>
+       
