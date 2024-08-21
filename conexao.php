@@ -2,12 +2,17 @@
 // Conexão com o banco de dados
 require 'db.php';
 
-// Dados do formulário
-$username = $_POST['username'];
-$password = $_POST['password'];
-$email = $_POST['email'];
-$name = $_POST['name'];
-$phone = $_POST['phone']; // Novo campo
+// Dados do formulário com valores padrão para evitar warnings
+$username = isset($_POST['username']) ? trim($_POST['username']) : null;
+$password = isset($_POST['password']) ? trim($_POST['password']) : null;
+$email = isset($_POST['email']) ? trim($_POST['email']) : null;
+$name = isset($_POST['name']) ? trim($_POST['name']) : null;
+$phone = isset($_POST['phone']) ? trim($_POST['phone']) : null;
+
+// Verifique se todos os campos obrigatórios foram preenchidos
+if (!$username || !$password || !$email || !$name) {
+    die('Todos os campos obrigatórios (Nome de Usuário, Senha, Email, Nome) devem ser preenchidos.');
+}
 
 // Hash da senha
 $password_hash = password_hash($password, PASSWORD_DEFAULT);

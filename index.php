@@ -14,36 +14,6 @@
     <button type="submit" class="menu-button">Sair</button>
 </form>
 
-<aside class="sidebar">
-    <!-- Conteúdo da sidebar -->
-     <h1>Relatorios de Ocorrências</h1>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EQBBXfvsHZRGrsTJc-I_0TwBP0KDLyJitfULlgMqTvxKtA?e=4tL93H" class="button" target="_blank">Alto Sucuriú</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ebs8AA3vvipJjhue7PA26pEBKQfEzmbfpD8GbZ5xSRMUzg?e=ZQqbwb" class="button" target="_blank">Bocaiuva</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERU6KctWCj9KhhqGn7_2DfwB9LfBdcKQdbB0W6TpwBUNdg?e=apnLB7" class="button" target="_blank">São Francisco</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EWBNIUFyBi5Co5QwUPJEmQcB8qtLIxu5xW_0a3YffjCNvg?e=faSci3" class="button" target="_blank">Arturo Andreoli</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EU2DCaRFeWNCpYGLpjjaKrgBhGEabgNmKebY-C9e0oPARg?e=B5BuTj" class="button" target="_blank">Boa Vista</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EaPbJOGpOn1OlqARh0o3oxgBy72ia0uwvz58ziqBNUFEwQ?e=sK7EcC" class="button" target="_blank">CGH Cachoeira</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ec0CMt6eQXhEo6siEXIR3OwB2JrvbHrm8ScLMT5vNB4AVw?e=3tFF1N" class="button" target="_blank">Confluência</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZhJeRhQjp9Il1aCuLt-sBcBDLNFViKxwYFavrdLIlcRAg?e=I7dWJk" class="button" target="_blank">Carlos Gonzatto</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ETR0CRe9nUtFjbxKvGdW7t8BLi4SanuKxWq2NJNDpXfjYg?e=8X2Mab" class="button" target="_blank">Marco Baldo</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXYuJNZq2fVKktzlQ-8gCkYBkphDe8cQCVJDHgDYG2i_GQ?e=RFzGm0" class="button" target="_blank">Rondinha</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EcY9kc9VzwNFhoq_R2Ga1RIBQL8uOIerBXNAmm4s35gcag?e=d6E4Gd" class="button" target="_blank">Tamboril</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ef21SbdL4ORIp2pGyiacAqYBk4mk3PTnAGkJoFBDPl0M0Q?e=WPRa8F" class="button" target="_blank">Gameleira</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EdQX2oDQOvFPka0ppmq8o5ABcag8d8bstF4WJ3wc3lzw_A?e=ejoxnT" class="button" target="_blank">São Bartolomeu</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXB6z9_mVTBOqSY3CToqzE4Bb0HmlY4S7JUOtAZZFdTgXg?e=05cPmX" class="button" target="_blank">UHE Fundão</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZtq-JtzgVtElCYMFutJAuYBlya7m3_AL9aKm_2KzgyRVw?e=xy6Jh0" class="button" target="_blank">CGH Fundão</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ET81e22X-fVPneEVcWAgQWgBBfwCfk7An3_1gDz_PtgHoA?e=TAGQM8" class="button" target="_blank">UHE Santa Clara</a>
-    <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EbO3_cNOV5hHpHRnwj1rOnMBP1FXzv3pfatTcND1fBq3ag?e=Hv2nzi" class="button" target="_blank">CGH Santa Clara</a>
-
-</aside>
-
-
-<script>
-function toggleSidebar() {
-    const sidebar = document.querySelector('aside.sidebar');
-    sidebar.classList.toggle('visible');
-}
-</script>
 
   
 </header>
@@ -55,11 +25,53 @@ function toggleSidebar() {
             <button id="btn-ferramentas-internas">Ferramentas Internas</button>
             <div class="menu-content">
                 <a href="agenda_mcq.php" class="button">Agenda</a>
+                <a href="sobreavisoElejor.php" class="button">Acionamento de sobreaviso</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Eh4gSjJjmklJlo3dzvg9x9kBGB99hKivisxhgjeaMPZDgQ?e=nwHgZc" class="button" target="_blank">Diario de Operação</a>
             </div>
         </div>
         <!-- Seus containers e botões aqui -->
         <div id="ferramentas-externas" class="menu-container">
+            <button id="btn-ferramentas-externas">Pré Operação MCQ</button>
+            <div class="menu-content">
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXs1TTPIkWZEtEe2hAG-dCMBXQjD8SLTctkXYel4jlimvQ?e=kt8iAm" target="_blank">CON - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZsKbUHne2dHkJ3FWY_M10oBoW3ndv8GjvM9oQyKj8aMYg?e=8wdskS" target="_blank">CGZ - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EX-J1D360pdKsmfb4uzcmfkBwSvIwQ16GModxOaiUmWj8Q?e=jw0JIp" target="_blank">CAC - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERyM59iWe_xJu2h9o9itG8YBxhrYXSx2ghAvVbb148t4NA?e=aXZCOk" target="_blank">BVI - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ESp_tZBdhFNPsYLTBzcjpWkB3OJVTGTSzZPgmfdFut9UZQ?e=B1D9ue" target="_blank">ART - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERSM6rmgDmVBqa2iBgmRky4B-0cDX6gpJgOW-b0qytfQNQ?e=KwPo18" target="_blank">BOC - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ec9J7ZFtsidNh76CrqnnfFoBEzrtrTJkum_W1eM5RYJ-aA?e=anziM5" target="_blank">SFR - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EY3gi1NLTDlLhcFTsQzdDzkBBQ-fxhKDS4TGtZ1f1PwZbQ?e=TUT5IO" target="_blank">GAM - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EfKhH2Gt3ixDgI7pd_s5A5cBjDFSzgCFRaTrX2Ynqpobog?e=Axl8Jb" target="_blank">SBO - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERl_lZO8Kj1FpzoP06gDW6IBG6HOC2cTUAmMhz_SoNtnLw?e=LKQxyU" target="_blank">TBI - Controle de intervenção</a>
+
+            </div>
+        </div
+    
+</header>
+        <div id="Relatórios de Ocorrências" class="menu-container">
+            <button id="btn-ferramentas-externas">Relatórios de Ocorrências</button>
+            <div class="menu-content">
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EQBBXfvsHZRGrsTJc-I_0TwBP0KDLyJitfULlgMqTvxKtA?e=4tL93H" class="button" target="_blank">Alto Sucuriú</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ebs8AA3vvipJjhue7PA26pEBKQfEzmbfpD8GbZ5xSRMUzg?e=ZQqbwb" class="button" target="_blank">Bocaiuva</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERU6KctWCj9KhhqGn7_2DfwB9LfBdcKQdbB0W6TpwBUNdg?e=apnLB7" class="button" target="_blank">São Francisco</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EWBNIUFyBi5Co5QwUPJEmQcB8qtLIxu5xW_0a3YffjCNvg?e=faSci3" class="button" target="_blank">Arturo Andreoli</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ec934-16haJBh_xPIHb4MtoBbHIs6d_YboThBIlNznjPlA?e=wCtssn" class="button" target="_blank">Boa Vista</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EaPbJOGpOn1OlqARh0o3oxgBy72ia0uwvz58ziqBNUFEwQ?e=sK7EcC" class="button" target="_blank">CGH Cachoeira</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EVoc3jTmV25GgPG6oWduYGEBCYMs1c5eQOOTsTTuf6fyMw?e=2b3tJ0" class="button" target="_blank">Confluência</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZhJeRhQjp9Il1aCuLt-sBcBDLNFViKxwYFavrdLIlcRAg?e=I7dWJk" class="button" target="_blank">Carlos Gonzatto</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ETR0CRe9nUtFjbxKvGdW7t8BLi4SanuKxWq2NJNDpXfjYg?e=8X2Mab" class="button" target="_blank">Marco Baldo</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXYuJNZq2fVKktzlQ-8gCkYBkphDe8cQCVJDHgDYG2i_GQ?e=RFzGm0" class="button" target="_blank">Rondinha</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EcY9kc9VzwNFhoq_R2Ga1RIBQL8uOIerBXNAmm4s35gcag?e=d6E4Gd" class="button" target="_blank">Tamboril</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ef21SbdL4ORIp2pGyiacAqYBk4mk3PTnAGkJoFBDPl0M0Q?e=WPRa8F" class="button" target="_blank">Gameleira</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EdQX2oDQOvFPka0ppmq8o5ABcag8d8bstF4WJ3wc3lzw_A?e=ejoxnT" class="button" target="_blank">São Bartolomeu</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXB6z9_mVTBOqSY3CToqzE4Bb0HmlY4S7JUOtAZZFdTgXg?e=05cPmX" class="button" target="_blank">UHE Fundão</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZtq-JtzgVtElCYMFutJAuYBlya7m3_AL9aKm_2KzgyRVw?e=xy6Jh0" class="button" target="_blank">CGH Fundão</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ET81e22X-fVPneEVcWAgQWgBBfwCfk7An3_1gDz_PtgHoA?e=TAGQM8" class="button" target="_blank">UHE Santa Clara</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EbO3_cNOV5hHpHRnwj1rOnMBP1FXzv3pfatTcND1fBq3ag?e=Hv2nzi" class="button" target="_blank">CGH Santa Clara</a>
+                    </div>
+        </div
+        <!-- Seus containers e botões aqui -->
+          <div id="ferramentas-externas" class="menu-container">
             <button id="btn-ferramentas-externas">Ferramentas Externas</button>
             <div class="menu-content">
                 <a href="https://sintegre.ons.org.br/paginas/meu-perfil/meus-sistemas.aspx" target="_blank">01 ONS</a>
@@ -74,21 +86,22 @@ function toggleSidebar() {
                 <a href="https://webmail-seguro.com.br/" target="_blank">10 Acesso ao Webmail</a>
             </div>
         </div>
+
         <div id="ferramentas-externas" class="menu-container">
             <button id="btn-ferramentas-externas">Previsão de Chuvas</button>
             <div class="menu-content">
-                <a href="http://www.simepar.br/prognozweb/alto_sucuriu/forecast_by_counties/5002951" target="_blank">Previsão do tempo - ASU / Chapadão do Sul - MS.</a>
-                <a href="http://www.simepar.br/prognozweb/bocaiuva/forecast_by_counties/5101902" target="_blank">Previsão do tempo - BOC / Branorte - MT.</a>
-                <a href="http://www.simepar.br/prognozweb/sao_francisco/forecast_by_counties/4127700" target="_blank">Previsão do tempo / SFR - Toledo- PR.</a>
-                <a href="http://www.simepar.br/prognozweb/fozchopim/forecast_by_counties/4106571" target="_blank">Previsão do tempo - ART / Cruzeiro do Iguaçu - PR</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/4332/turvo-pr" target="_blank">Previsão do tempo - BVI & CAC - Turvo - PR</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/1329/prudentopolis-pr" target="_blank">Previsão do tempo - CON / Prudentópolis - PR</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2947/camponovo-rs" target="_blank">Previsão do tempo - CGZ / Campo Novo - RS</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - MBO / Braga - RS</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - RON / Passos Maia - SC</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - SBO / Luziânia - GO</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - TBI / Cristalina - GO</a>
-                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank">Previsão do tempo - GAM / Cristalina - GO</a>
+                <a href="http://www.simepar.br/prognozweb/alto_sucuriu/forecast_by_counties/5002951" target="_blank"> ASU / Chapadão do Sul - MS.</a>
+                <a href="http://www.simepar.br/prognozweb/bocaiuva/forecast_by_counties/5101902" target="_blank"> BOC / Branorte - MT.</a>
+                <a href="http://www.simepar.br/prognozweb/sao_francisco/forecast_by_counties/4127700" target="_blank"> SFR / Toledo- PR.</a>
+                <a href="http://www.simepar.br/prognozweb/fozchopim/forecast_by_counties/4106571" target="_blank"> ART / Cruzeiro do Iguaçu - PR</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/4332/turvo-pr" target="_blank">BVI & CAC / Turvo - PR</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/1329/prudentopolis-pr" target="_blank"> CON / Prudentópolis - PR</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2947/camponovo-rs" target="_blank">CGZ / Campo Novo - RS</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank"> MBO / Braga - RS</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank"> RON / Passos Maia - SC</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank"> SBO / Luziânia - GO</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank"> TBI / Cristalina - GO</a>
+                <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank"> GAM / Cristalina - GO</a>
             </div>
         </div>
 
@@ -96,26 +109,26 @@ function toggleSidebar() {
         <div id="planilhas-ilha1" class="menu-container">
             <button id="btn-planilhas-ilha1">Planilhas Diárias de Operação - Ilha 01</button>
             <div class="menu-content">
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20CESBE%2FPCH%20Carlos%20Gonzatto%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">01 PCH Carlos Gonzatto</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20CESBE%2FPCH%20Marco%20Baldo%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">02 PCH Marco Baldo</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20Tradener%2FPCH%20Rondinha%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">03 PCH Rondinha</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20SILEA%2FPCH%20Alto%20Sucuri%C3%BA%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">04 PCH Alto Sucuriú</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20SILEA%2FPCH%20S%C3%A3o%20Francisco%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">05 PCH São Francisco</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20CER%2FPCH%20Conflu%C3%AAncia%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilha%20Di%C3%A1ria%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">06 PCH Confluência</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20Elejor%2FUHE%20e%20CGH%20Santa%20Clara%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">07 UHE Santa Clara</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EqKIFodSIXNBu8kIMWGU2RoBHgRELa9CApFZlORfcagAgA?e=gsWBV2" target="_blank">01 PCH Carlos Gonzatto</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EqVPTJ3dBPlDmR7l5dZLFbMB-9V0rN5Tu_8L-1fMrUPFMg?e=ZGfP0R" target="_blank">02 PCH Marco Baldo</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Etdh8WWUXhJBnHDuva7SNB8BfJ_yj_L5-oH8uQRVsR1gfw?e=bW4wAS" target="_blank">03 PCH Rondinha</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Er1QVPZl6u9Hl8bCP5i02ccBNLfWvBf4nW3_DZpuff0OmA?e=hY9LK1" target="_blank">04 PCH Alto Sucuriú</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Eke5TWYa0CJHlvimGvyxqWMBVlZ3rrcwQvn35fLlFOZZYA?e=bnjRrJ" target="_blank">05 PCH São Francisco</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EvtfbCIPo3hKlg_JXgHaSEUBy6S9X7NUHVPPqHeP_Fmq6Q?e=RcTjpj" target="_blank">06 PCH Confluência</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZRbKmbPsbtOpgNtsQvGgmwBvryinBfNm7Z6T_jiLBkZiw?e=cbhqTd" target="_blank">07 UHE Santa Clara</a>
             </div>
         </div>
         <div id="planilhas-ilha2" class="menu-container">
             <button id="btn-planilhas-ilha2">Planilhas Diárias de Operação - Ilha 02</button>
             <div class="menu-content">
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20Elejor%2FUHE%20e%20CGH%20Fund%C3%A3o%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">08 UHE Fundão</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20SILEA%2FPCH%20Bocai%C3%BAva%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">09 PCH Bocaiuva</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20SILEA%2FPCH%20Arturo%20Andreoli%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">10 PCH Arturo Andreoli</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20IBEMAPAR%2FPCH%20Boa%20Vista%20II%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">11 PCH Boa Vista</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20IBEMAPAR%2FCGH%20Cachoeira%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">12 CGH Cachoeira</a>
-                <a href="https://mcqcombr-my.sharepoint.com/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/onedrive.aspx?view=0&id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20Tradener%2FPCH%20S%C3%A3o%20Bartolomeu%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">13 PCH São Bartolomeu</a>
-                <a href="https://mcqcombr-my.sharepoint.com/my?id=%2Fpersonal%2Foperacao%5Fmcqcombr%5Fonmicrosoft%5Fcom%2FDocuments%2F01%20%2D%20Opera%C3%A7%C3%A3o%2FUsinas%20Tradener%2FPCH%20Gameleira%2F02%20%2D%20P%C3%B3s%20Opera%C3%A7%C3%A3o%2F01%20%2D%20Planilhas%20Di%C3%A1rias%20de%20Opera%C3%A7%C3%A3o%2F2024" target="_blank">14 PCH Gameleira</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/r/personal/operacao_mcqcombr_onmicrosoft_com/_layouts/15/Doc.aspx?sourcedoc=%7B44F6C649-C9C3-450A-8103-9F90F1FC5CB0%7D&file=PDO%20-%20PCH%20SBGER%20(Tamboril)%20-%2007-2024.xlsx&action=default&mobileredirect=true&wdsle=0" target="_blank">15 PCH Tamboril</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EY0ArYZCWd5EuZEMpXawXzcBmK7heafgE456CmBG9W4fbA?e=Q3q5Wr" target="_blank">08 UHE Fundão</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EpHn5BJMy6NPsqqWLIP_LSgBRV2fvFXvx4w6MxwTScrbXA?e=cqZC1c" target="_blank">09 PCH Bocaiuva</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EiG6fVkkysRClVF-6A6FFYQBTjgRDV9vgex4rifjD-Hk8Q?e=2WUe9t" target="_blank">10 PCH Arturo Andreoli</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EsRynMde_CVCkhO4uRY2h3kB-KVm1sQ73zTA8GrzXiJb_Q?e=tm29ZH" target="_blank">11 PCH Boa Vista</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EbU1yd_irkFCkwTm7R77RDIBs1OX4svGOe0VLs8ORVLjyA?e=TkY5p5" target="_blank">12 CGH Cachoeira</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EcgiipG5MJhLmaxReYApkwABv7-qh66aeIiWuJ3V8ywjoQ?e=wzEA4h" target="_blank">13 PCH São Bartolomeu</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ele7aKn6Be5OlyZgxsFJEUMBt6e78K5yMYh_f2oT-QCn9Q?e=wsL46x" target="_blank">14 PCH Gameleira</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EvUH-_mKGX9Ns_fMLYjHgHABXbuR8FFRPF38Cec855mwCQ?e=QEZick" target="_blank">15 PCH Tamboril</a>
 
             </div>
         </div>
@@ -637,4 +650,6 @@ header {
             });
             
     </script>
-       
+
+
+
