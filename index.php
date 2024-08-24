@@ -37,7 +37,25 @@
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EqleDVtV3IdIrU3Mz-t4m1kBbpBbagb3L4KNeDkZqDOl1w?e=kp8qqp" class="button" target="_blank">PCH Tamboril</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EhhDGlwxqxhDidIo9O_0AJIBz_WlGBu8koMMRA9YTMLITg?e=fFNEub" class="button" target="_blank">PCH Rondinha</a>          
             </div>
+            </div
+        <!-- Seus containers e botões aqui -->
+            
+            <div id="ferramentas-externas" class="menu-container">
+            <button id="btn-ferramentas-externas">Ferramentas Externas</button>
+            <div class="menu-content">
+                <a href="https://sintegre.ons.org.br/paginas/meu-perfil/meus-sistemas.aspx" target="_blank">01 ONS</a>
+                <a href="https://www.ccee.org.br/web/guest/precos/painel-precos" target="_blank">02 CCEE</a>
+                <a href="http://www.simepar.br/prognozweb/sao_francisco/table_data_station_hourly" target="_blank">03 Simepar</a>
+                <a href="https://stats.uptimerobot.com/2963AIKqz6" target="_blank">04 Status de conexão</a>
+                <a href="https://www.copel.com/mhbweb/paginas/bacia-iguacu.jsf" target="_blank">06 Copel Hidrologias</a>
+                <a href="http://servidor.ambitec.eng.br:8080/sistema/index.php?class=MyMessageList" target="_blank">07 NaturWelt</a>
+                <a href="https://hidro.tach.com.br/index.php" target="_blank">08 Hidro Tach</a>
+                <a href="https://10.20.20.110/" target="_blank">09 IHM CAC</a>
+                <a href="https://web.skype.com/" target="_blank">12 Skype</a>
+                <a href="https://webmail-seguro.com.br/" target="_blank">10 Acesso ao Webmail</a>
+            </div>
         </div>
+
     <!-- Conteúdo do painel -->
    
         <div id="Ferramentas-Internas" class="menu-container">
@@ -93,23 +111,7 @@
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ET81e22X-fVPneEVcWAgQWgBBfwCfk7An3_1gDz_PtgHoA?e=TAGQM8" class="button" target="_blank">UHE Santa Clara</a>
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EbO3_cNOV5hHpHRnwj1rOnMBP1FXzv3pfatTcND1fBq3ag?e=Hv2nzi" class="button" target="_blank">CGH Santa Clara</a>
         </div>
-        </div
-        <!-- Seus containers e botões aqui -->
-            
-            <div id="ferramentas-externas" class="menu-container">
-            <button id="btn-ferramentas-externas">Ferramentas Externas</button>
-            <div class="menu-content">
-                <a href="https://sintegre.ons.org.br/paginas/meu-perfil/meus-sistemas.aspx" target="_blank">01 ONS</a>
-                <a href="https://www.ccee.org.br/web/guest/precos/painel-precos" target="_blank">02 CCEE</a>
-                <a href="http://www.simepar.br/prognozweb/sao_francisco/table_data_station_hourly" target="_blank">03 Simepar</a>
-                <a href="https://stats.uptimerobot.com/2963AIKqz6" target="_blank">04 Status de conexão</a>
-                <a href="https://www.copel.com/mhbweb/paginas/bacia-iguacu.jsf" target="_blank">06 Copel Hidrologias</a>
-                <a href="http://servidor.ambitec.eng.br:8080/sistema/index.php?class=MyMessageList" target="_blank">07 NaturWelt</a>
-                <a href="https://hidro.tach.com.br/index.php" target="_blank">08 Hidro Tach</a>
-                <a href="https://10.20.20.110/" target="_blank">09 IHM CAC</a>
-                <a href="https://web.skype.com/" target="_blank">12 Skype</a>
-                <a href="https://webmail-seguro.com.br/" target="_blank">10 Acesso ao Webmail</a>
-            </div>
+      
         </div>
         
         <div id="ferramentas-externas" class="menu-container">
