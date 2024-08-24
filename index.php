@@ -9,6 +9,7 @@
 <body>
 <header>
     <img src="icons/logo-mcq.png" alt="Logo da Empresa Esquerda" class="logo-left">
+    
     <h1>Centro de Operação Remota - Painel de Ferramentas</h1>
     <form action="logout.php" method="POST">
     <button type="submit" class="menu-button">Sair</button>
@@ -18,36 +19,59 @@
   
 </header>
 
-   
+     <!-- Conteúdo do painel -->
+     <div id="painel">
+        <div id="EscalaSobreaviso" class="menu-container">
+            <button id="btn-ferramentas-internas">Escalas de Sobreavisos</button>
+            <div class="menu-content">
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EvLehsP1E19OgjgMh24Ttu4Bz28pA1lvgq4D2d5k7wqY4Q?e=HwdhOJ" class="button" target="_blank">ELEJOR</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EgI8HM_1qt1Cv72BBJKvGeUBn0OtnT9GJ3YM2BcN4hpetg?e=SI1huq" class="button" target="_blank">PCH Alto Sucuriú</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EnO-D_GBbRdJtkwM89pkysMB7m1sAOKMekUjR-rDRdlHsg?e=zTu2BO" class="button" target="_blank">PCH São Francisco</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EkpqtrvEA9RBgDbZfq8iB5sB_8BaE74Co9QMo7_HJHF6Iw?e=8bdpSg" class="button" target="_blank">PCH Arturo Andreli</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EvXoW_hvzmVEnVEmOEPwyf8BK__R3-xsI_fO4Rwa02I_Yg?e=WErBqb" class="button" target="_blank">PCH Bocaiuva</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ej9cuklzZ7lBgSGSpdtgockBFiXuvonc5HszMCtGhQVnUw?e=LOZTeK" class="button" target="_blank">PCH Boa Vista e CGH Cachoeira</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EuTVY9uwnCxLriP7uviMSrkBMKIh-1cUp80aH31JlFBLDw?e=9YjAVA" class="button" target="_blank">PCH Carlos Gonzatto e Marco Baldo</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Et60KR9DCalNvS4RorN5zK8BR42Z7w3OCMQ9af_bAqloag?e=HPKZvv" class="button" target="_blank">PCH Confluência</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EVz930dJ_h9OkqyRBzE4gscB-yIBXAq4XbaK9jrlhf5l5w?e=jWsU4e" class="button" target="_blank">PCH São Bartolomeu</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EveBnJB_LoxFlPZSHbiukjgBS3Bgkjx1WHYISI3ObnbCZw?e=klwV3u" class="button" target="_blank">PCH Gameleira</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EqleDVtV3IdIrU3Mz-t4m1kBbpBbagb3L4KNeDkZqDOl1w?e=kp8qqp" class="button" target="_blank">PCH Tamboril</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EhhDGlwxqxhDidIo9O_0AJIBz_WlGBu8koMMRA9YTMLITg?e=fFNEub" class="button" target="_blank">PCH Rondinha</a>          
+            </div>
+        </div>
     <!-- Conteúdo do painel -->
-    <div id="painel">
+   
         <div id="Ferramentas-Internas" class="menu-container">
             <button id="btn-ferramentas-internas">Ferramentas Internas</button>
             <div class="menu-content">
+                 <!--
                 <a href="agenda_mcq.php" class="button">Agenda</a>
                 <a href="sobreavisoElejor.php" class="button">Acionamento de sobreaviso</a>
+                -->
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Eh4gSjJjmklJlo3dzvg9x9kBGB99hKivisxhgjeaMPZDgQ?e=nwHgZc" class="button" target="_blank">Diario de Operação</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EQrobaWYzulNjIA9lAehWpIBK_SsufElXWoC9W3bqsf7Eg?e=HahAeB" class="button" target="_blank">Contatos</a>
+            
             </div>
         </div>
         <!-- Seus containers e botões aqui -->
+        
         <div id="ferramentas-externas" class="menu-container">
-            <button id="btn-ferramentas-externas">Pré Operação MCQ</button>
+            <button id="btn-ferramentas-externas">Controle de intervenção</button>
             <div class="menu-content">
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXs1TTPIkWZEtEe2hAG-dCMBXQjD8SLTctkXYel4jlimvQ?e=kt8iAm" target="_blank">CON - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZsKbUHne2dHkJ3FWY_M10oBoW3ndv8GjvM9oQyKj8aMYg?e=8wdskS" target="_blank">CGZ - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EX-J1D360pdKsmfb4uzcmfkBwSvIwQ16GModxOaiUmWj8Q?e=jw0JIp" target="_blank">CAC - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERyM59iWe_xJu2h9o9itG8YBxhrYXSx2ghAvVbb148t4NA?e=aXZCOk" target="_blank">BVI - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ESp_tZBdhFNPsYLTBzcjpWkB3OJVTGTSzZPgmfdFut9UZQ?e=B1D9ue" target="_blank">ART - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERSM6rmgDmVBqa2iBgmRky4B-0cDX6gpJgOW-b0qytfQNQ?e=KwPo18" target="_blank">BOC - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ec9J7ZFtsidNh76CrqnnfFoBEzrtrTJkum_W1eM5RYJ-aA?e=anziM5" target="_blank">SFR - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EY3gi1NLTDlLhcFTsQzdDzkBBQ-fxhKDS4TGtZ1f1PwZbQ?e=TUT5IO" target="_blank">GAM - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EfKhH2Gt3ixDgI7pd_s5A5cBjDFSzgCFRaTrX2Ynqpobog?e=Axl8Jb" target="_blank">SBO - Controle de intervenção</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERl_lZO8Kj1FpzoP06gDW6IBG6HOC2cTUAmMhz_SoNtnLw?e=LKQxyU" target="_blank">TBI - Controle de intervenção</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXs1TTPIkWZEtEe2hAG-dCMBXQjD8SLTctkXYel4jlimvQ?e=kt8iAm" target="_blank">PCH - CONFLUÊNCIA</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZsKbUHne2dHkJ3FWY_M10oBoW3ndv8GjvM9oQyKj8aMYg?e=8wdskS" target="_blank">PCH - CARLOS GONZATTO</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EX-J1D360pdKsmfb4uzcmfkBwSvIwQ16GModxOaiUmWj8Q?e=jw0JIp" target="_blank">CGH - CACHOEIRA</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERyM59iWe_xJu2h9o9itG8YBxhrYXSx2ghAvVbb148t4NA?e=aXZCOk" target="_blank">PCH - BOA VISTA</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ESp_tZBdhFNPsYLTBzcjpWkB3OJVTGTSzZPgmfdFut9UZQ?e=B1D9ue" target="_blank">PCH - ARTURO ANDREOLI</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERSM6rmgDmVBqa2iBgmRky4B-0cDX6gpJgOW-b0qytfQNQ?e=KwPo18" target="_blank">PCH - BOCAIUVA</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ec9J7ZFtsidNh76CrqnnfFoBEzrtrTJkum_W1eM5RYJ-aA?e=anziM5" target="_blank">PCH - SÃO FRANCISCO</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EY3gi1NLTDlLhcFTsQzdDzkBBQ-fxhKDS4TGtZ1f1PwZbQ?e=TUT5IO" target="_blank">PCH - GAMELEIRA</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EfKhH2Gt3ixDgI7pd_s5A5cBjDFSzgCFRaTrX2Ynqpobog?e=Axl8Jb" target="_blank">PCH - SÃO BARTOLOMEU</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ERl_lZO8Kj1FpzoP06gDW6IBG6HOC2cTUAmMhz_SoNtnLw?e=LKQxyU" target="_blank">PCH - TAMBORIL</a>
 
             </div>
         </div
-    
 </header>
+   
         <div id="Relatórios de Ocorrências" class="menu-container">
             <button id="btn-ferramentas-externas">Relatórios de Ocorrências</button>
             <div class="menu-content">
@@ -63,15 +87,16 @@
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXYuJNZq2fVKktzlQ-8gCkYBkphDe8cQCVJDHgDYG2i_GQ?e=RFzGm0" class="button" target="_blank">Rondinha</a>
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EcY9kc9VzwNFhoq_R2Ga1RIBQL8uOIerBXNAmm4s35gcag?e=d6E4Gd" class="button" target="_blank">Tamboril</a>
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ef21SbdL4ORIp2pGyiacAqYBk4mk3PTnAGkJoFBDPl0M0Q?e=WPRa8F" class="button" target="_blank">Gameleira</a>
-            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EdQX2oDQOvFPka0ppmq8o5ABcag8d8bstF4WJ3wc3lzw_A?e=ejoxnT" class="button" target="_blank">São Bartolomeu</a>
+            <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EdQX2oDQOvFPka0ppmq8o5ABcag8d8bstF4WJ3wc3lzw_A?e=mViY8v" class="button" target="_blank">São Bartolomeu</a>
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EXB6z9_mVTBOqSY3CToqzE4Bb0HmlY4S7JUOtAZZFdTgXg?e=05cPmX" class="button" target="_blank">UHE Fundão</a>
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZtq-JtzgVtElCYMFutJAuYBlya7m3_AL9aKm_2KzgyRVw?e=xy6Jh0" class="button" target="_blank">CGH Fundão</a>
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/ET81e22X-fVPneEVcWAgQWgBBfwCfk7An3_1gDz_PtgHoA?e=TAGQM8" class="button" target="_blank">UHE Santa Clara</a>
             <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EbO3_cNOV5hHpHRnwj1rOnMBP1FXzv3pfatTcND1fBq3ag?e=Hv2nzi" class="button" target="_blank">CGH Santa Clara</a>
-                    </div>
+        </div>
         </div
         <!-- Seus containers e botões aqui -->
-          <div id="ferramentas-externas" class="menu-container">
+            
+            <div id="ferramentas-externas" class="menu-container">
             <button id="btn-ferramentas-externas">Ferramentas Externas</button>
             <div class="menu-content">
                 <a href="https://sintegre.ons.org.br/paginas/meu-perfil/meus-sistemas.aspx" target="_blank">01 ONS</a>
@@ -86,7 +111,7 @@
                 <a href="https://webmail-seguro.com.br/" target="_blank">10 Acesso ao Webmail</a>
             </div>
         </div>
-
+        
         <div id="ferramentas-externas" class="menu-container">
             <button id="btn-ferramentas-externas">Previsão de Chuvas</button>
             <div class="menu-content">
@@ -104,10 +129,9 @@
                 <a href="https://www.climatempo.com.br/previsao-do-tempo/cidade/2942/braga-rs" target="_blank"> GAM / Cristalina - GO</a>
             </div>
         </div>
-
-
+       
         <div id="planilhas-ilha1" class="menu-container">
-            <button id="btn-planilhas-ilha1">Planilhas Diárias de Operação - Ilha 01</button>
+            <button id="btn-planilhas-ilha1">PDO - Ilha 01</button>
             <div class="menu-content">
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EqKIFodSIXNBu8kIMWGU2RoBHgRELa9CApFZlORfcagAgA?e=gsWBV2" target="_blank">01 PCH Carlos Gonzatto</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EqVPTJ3dBPlDmR7l5dZLFbMB-9V0rN5Tu_8L-1fMrUPFMg?e=ZGfP0R" target="_blank">02 PCH Marco Baldo</a>
@@ -118,27 +142,180 @@
                 <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EZRbKmbPsbtOpgNtsQvGgmwBvryinBfNm7Z6T_jiLBkZiw?e=cbhqTd" target="_blank">07 UHE Santa Clara</a>
             </div>
         </div>
+       
         <div id="planilhas-ilha2" class="menu-container">
-            <button id="btn-planilhas-ilha2">Planilhas Diárias de Operação - Ilha 02</button>
+            <button id="btn-planilhas-ilha2">PDO - Ilha 02</button>
             <div class="menu-content">
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EY0ArYZCWd5EuZEMpXawXzcBmK7heafgE456CmBG9W4fbA?e=Q3q5Wr" target="_blank">08 UHE Fundão</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ek-GY-ZVpwNNn0gjqI7HL2YBXIPkmkXbw5F-7BhI_MMljQ?e=wlheAi" target="_blank">08 UHE Fundão</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EpHn5BJMy6NPsqqWLIP_LSgBRV2fvFXvx4w6MxwTScrbXA?e=cqZC1c" target="_blank">09 PCH Bocaiuva</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EiG6fVkkysRClVF-6A6FFYQBTjgRDV9vgex4rifjD-Hk8Q?e=2WUe9t" target="_blank">10 PCH Arturo Andreoli</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EsRynMde_CVCkhO4uRY2h3kB-KVm1sQ73zTA8GrzXiJb_Q?e=tm29ZH" target="_blank">11 PCH Boa Vista</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EbU1yd_irkFCkwTm7R77RDIBs1OX4svGOe0VLs8ORVLjyA?e=TkY5p5" target="_blank">12 CGH Cachoeira</a>
-                <a href="https://mcqcombr-my.sharepoint.com/:x:/g/personal/operacao_mcqcombr_onmicrosoft_com/EcgiipG5MJhLmaxReYApkwABv7-qh66aeIiWuJ3V8ywjoQ?e=wzEA4h" target="_blank">13 PCH São Bartolomeu</a>
+                <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Eoc_yBJvN6tAtBFhRwoJChIBSYBW2RYxPE5c1rRN3EK1Dg?e=ZQY6ec" target="_blank">13 PCH São Bartolomeu</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/Ele7aKn6Be5OlyZgxsFJEUMBt6e78K5yMYh_f2oT-QCn9Q?e=wsL46x" target="_blank">14 PCH Gameleira</a>
                 <a href="https://mcqcombr-my.sharepoint.com/:f:/g/personal/operacao_mcqcombr_onmicrosoft_com/EvUH-_mKGX9Ns_fMLYjHgHABXbuR8FFRPF38Cec855mwCQ?e=QEZick" target="_blank">15 PCH Tamboril</a>
-
             </div>
         </div>
+        
+    </>
+    
     </div>
-    </div>
- 
+     <!-- Rodapé -->
+     <footer>
+        Tiago Pereira, 2024 - Centro de Operação Remota MCQ - Curitiba PR
+    </footer>
 </body>
 </html>
 
         <style>
+            /* Estilo do título */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1; /* Garante que o rodapé fique abaixo do cabeçalho */
+}
+
+.button-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 colunas de igual largura */
+            gap: 10px; /* Espaçamento entre os botões */
+            margin: 20px; /* Margem ao redor do container */
+        }
+
+        .button-container .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button-container .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Ajuste para dispositivos menores */
+        @media (max-width: 768px) {
+            .button-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-container {
+                grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+            }
+        }
+
+/* Responsividade para monitores menores (abaixo de 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 20px;
+    }
+
+    header h1 {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .button-container {
+        margin-top: 50px; /* Aumenta o espaço acima dos botões */
+    }
+}
+
+/* Responsividade para tablets (abaixo de 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 10px;
+        padding: 14px;
+    }
+
+    .button-container {
+        margin-top: 70px; /* Aumenta o espaço acima dos botões */
+    }
+}
+
+/* Responsividade para smartphones (abaixo de 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 40px 10px;
+    }
+
+    header h1 {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    footer {
+        font-size: 8px;
+        padding: 16px;
+    }
+
+    .button-container {
+        margin-top: 90px; /* Aumenta o espaço acima dos botões */
+    }
+}
+
+
+   /* Estilo para o rodapé */
+   footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            color: #333;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
             /* Ajuste para dispositivos menores */
 @media (max-width: 768px) {
     .sidebar {
@@ -422,7 +599,58 @@ header h1 {
     margin: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-weight: bold; /* Texto em negrito */
+    transition: padding 0.3s, margin 0.3s; /* Transições suaves para ajustes de padding e margin */
+}
 
+/* Ajuste quando todos os menus estão abertos */
+body.menu-ativo #painel {
+    padding: 10px; /* Reduz o padding quando os menus estão abertos */
+    margin: 0; /* Remove a margem lateral para maximizar o espaço disponível */
+}
+
+/* Responsividade para monitores menores (abaixo de 1024px) */
+@media (max-width: 1024px) {
+    #painel {
+        flex-direction: column;
+        padding: 15px;
+        margin: 0 15px;
+        gap: 15px;
+    }
+
+    body.menu-ativo #painel {
+        padding: 10px;
+        margin: 0; /* Remove a margem lateral para aproveitar melhor o espaço */
+    }
+}
+
+/* Responsividade para tablets (abaixo de 768px) */
+@media (max-width: 768px) {
+    #painel {
+        flex-direction: column;
+        padding: 10px;
+        margin: 0 10px;
+        gap: 10px;
+    }
+
+    body.menu-ativo #painel {
+        padding: 5px;
+        margin: 0; /* Remove a margem lateral para aproveitar melhor o espaço */
+    }
+}
+
+/* Responsividade para smartphones (abaixo de 480px) */
+@media (max-width: 480px) {
+    #painel {
+        flex-direction: column;
+        padding: 5px;
+        margin: 0 5px;
+        gap: 5px;
+    }
+
+    body.menu-ativo #painel {
+        padding: 3px;
+        margin: 0; /* Remove a margem lateral para aproveitar melhor o espaço */
+    }
 }
 
 
@@ -484,35 +712,45 @@ header h1 {
 }
 
 .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Espaçamento entre os botões */
+            justify-content: center; /* Centraliza os botões horizontalmente */
+            margin: 20px; /* Margem ao redor do container */
+        }
 
-.button-container .button {
-    width: 220px;
-    padding: 15px 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    transition: background-color 0.3s, transform 0.3s;
-}
+        .button-container .button {
+            flex: 1 1 calc(25% - 20px); /* Define a largura dos botões (4 por linha) */
+            box-sizing: border-box; /* Inclui padding e border na largura total */
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-.button-container .button:hover {
-    background-color: #45a049;
-    transform: translateY(-5px);
-}
+        .button-container .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
 
-.loaded {
-    opacity: 1 !important;
-}
+        /* Ajuste para dispositivos menores */
+        @media (max-width: 768px) {
+            .button-container .button {
+                flex: 1 1 calc(50% - 20px); /* 2 botões por linha em telas menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-container .button {
+                flex: 1 1 100%; /* 1 botão por linha em telas muito pequenas */
+            }
+        }
 
 /* Ocultar o conteúdo principal quando o menu lateral estiver aberto */
 body.menu-ativo .conteudo-principal,
@@ -572,45 +810,23 @@ header {
 }
 
 
-
-/* Responsividade */
-@media (max-width: 768px) {
-    #painel {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-container {
-        width: 100%;
-    }
-
-    .button-container .button {
-        width: 100%;
-    }
+body {
+    margin: 0;
+    padding: 0;
 }
 
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .logo-left, .logo-right {
-        position: relative;
-        width: 60px; /* Ajuste conforme necessário */
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    .logout-button {
-        font-size: 14px;
-        padding: 8px 16px;
-        right: 20px; /* Ajuste para ficar dentro da tela em dispositivos menores */
-    }
+.imagem-fundo {
+    width: 100%;
+    height: 400px; /* Ajuste conforme necessário */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir o elemento */
+    background-position: center; /* Alinha a imagem ao centro */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Adiciona sombra ao texto para melhorar a legibilidade */
 }
-
     </style>
         <script>
 
