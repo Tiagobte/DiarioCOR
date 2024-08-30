@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ ELETRO SERVICE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+       
+            
+/* Estilo para o contêiner do álbum */
+.album-content {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para parágrafos */
+.album-content p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #34495e;
+    text-align: justify;
+}
+
+/* Estilo para listas */
+.album-content ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.album-content ul li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 1.05em;
+    color: #2c3e50;
+    list-style-type: disc;
+}
+
+/* Destaque de palavras importantes */
+.album-content p span.highlight {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+/* Estilo para os subtítulos */
+.album-content p strong {
+    font-size: 1.2em;
+    color: #2980b9;
+}
+
+
+/* Estilo das divs de conteúdo */
+.usinas-content {
+    margin-bottom: 40px;
+}
+
+.usinas-content h2 {
+    font-size: 1.8em;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.usinas-content p {
+    font-size: 1.1em;
+    color: #34495e;
+    background-color: #ffffff;
+    padding: 15px;
+    border-left: 5px solid #2980b9;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f8fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px 0;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo-left {
+            width: 150px;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #2980b9, #2c3e50);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0 0 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 15px 30px;
+            font-size: 1em;
+            background-color: #f39c12;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #d35400;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .usinas-content {
+            margin-bottom: 40px;
+        }
+
+        .usinas-content h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .usinas-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .usinas-content img {
+            width: 30%;
+            height: auto;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .usinas img, .usinas-grid img, .album-carousel img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .usinas img:hover, .usinas-grid img:hover, .album-carousel img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .usinas-content h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .usinas-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #f39c12;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .hero button {
+                font-size: 0.9em;
+            }
+
+            .album-carousel img {
+                height: 150px;
+            }
+        }
+        h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+li {
+    font-size: 1.2em;
+    color: #34495e;
+    margin: 10px 0;
+    padding: 10px;
+    list-style-type: none;
+    background-color: #ecf0f1;
+    border-left: 5px solid #2980b9;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+li:hover {
+    background-color: #d1e7f0;
+    border-left: 5px solid #3498db;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilo da seção de serviços */
+ #services {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Estilo básico da lista */
+.activity {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #34495e;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-left: 5px solid #2980b9;
+    border-radius: 5px;
+    list-style-type: none;
+    font-family: 'Arial', sans-serif;
+}
+
+.activity:hover {
+    background-color: #d1e7f0;
+    border-left-color: #3498db;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilo do conteúdo oculto */
+.content {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #2c3e50;
+}
+
+.content p, .content ul {
+    margin: 0;
+    padding: 0;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Estilo do carrossel */
+.carousel {
+    position: relative;
+    max-width: 50%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Imagens do carrossel */
+.carousel-images {
+    display: flex;
+    transition: transform 0.10s ease;
+}
+
+/* Estilo das imagens dentro do carrossel */
+.carousel-images img {
+    width: calc(60% - 20px); /* Ajuste a largura da imagem com espaço entre elas */
+    flex-shrink: 0;
+    margin-right: 20px; /* Espaço entre imagens */
+}
+
+/* Remover o espaçamento da última imagem */
+.carousel-images img:last-child {
+    margin-right: 0;
+}
+.carousel-images img {
+    width: 60%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, border 0.3s ease; /* Transição suave */
+}
+
+.carousel-images img:hover {
+    transform: scale(1.1); /* Aumenta a escala da imagem */
+    border: 2px solid #3498db; /* Adiciona uma borda ao passar o mouse */
+}
+
+
+/* Botões de navegação do carrossel */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Estilos para o link do álbum completo */
+.view-all {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1.2em;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+/* Estilo para o botão de mostrar detalhes */
+.toggle-button {
+    display: block;
+    margin: 10px 0;
+    padding: 8px 16px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo para o conteúdo oculto */
+.album-content {
+    display: none;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o conteúdo exibido */
+.album-content.show {
+    display: block;
+}
+
+/* Estilo para o título da atividade */
+.activity-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+#om.content {
+    font-size: 0.8em; /* Ajuste conforme necessário */
+}
+
+#om.content p {
+    font-size: 0.m; /* Ajuste conforme necessário */
+}
+
+#om.content ul {
+    font-size: 0.9em; /* Ajuste conforme necessário */
+}
+.carousel-images img.hovered {
+    transform: scale(1.1); /* Aumenta a escala da imagem */
+    border: 2px solid #3498db; /* Adiciona uma borda ao passar o mouse */
+}
+
+.hovered {
+    opacity: 0.8; /* Exemplo: reduz a opacidade */
+    transform: scale(1.05); /* Exemplo: aumenta levemente a imagem */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <img src="icons/logo-mcq.png" alt="Logo da Empresa" class="logo-left">
+        <nav>
+            <a href="#about">Sobre a Empresa</a>
+            <a href="#usinas">Usinas</a>
+            <a href="#album">Álbum</a>
+        </nav>
+    </header>
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content">
+        <div id="caption"></div>
+    </div>
+    
+    <section class="hero">
+        <div class="container">
+         <p>Nossos Serviços: <br>
+            <br>
+            Operação e Manutenção (O&M), Engenharia do Proprietário, Ensaios Específicos, Comissionamento e Diligenciamentos. <br>
+            
+            <br>Expertise:
+            <br>
+            <br>
+            Somos especializados em fornecer soluções integradas para usinas hidrelétricas, termoelétricas, eólicas e fotovoltaicas, garantindo excelência e confiabilidade em cada etapa do projeto.</p>
+            <button>Saiba Mais</button>
+        </div>
+     
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">Sobre a Empresa</h2>
+
+        <p>Uma empresa fundada em 1999 por engenheiros com vasta experiência no setor energético - oriundos da COPEL, Companhia Paranaense de Energia - com o objetivo de oferecer ao mercado SERVIÇOS EM ENERGIA, justamente com base na experiência, know-how e tecnologia adquiridas por estes profissionais em comissionamento, operação, manutenção, consultoria, entre outros, nas áreas de Geração e Transmissão de Energia. 
+            A MCQ ELETROSERVICE LTDA. oferece ao mercado serviços específicos e diferenciados, para atender às necessidades e exigências do cliente e do mercado, com flexibilidade, qualidade, prazos e a melhor tecnologia, buscando sempre proporcionar vantagens técnicas e econômicas aos clientes.</p>
+        <p>A MCQ Eletroservice é uma empresa líder em soluções de manutenção e operação para usinas hidrelétricas, termoelétricas, eólicas e fotovoltaicas. Com sede em Curitiba, PR, nossa equipe é composta por especialistas altamente treinados que utilizam tecnologia avançada para garantir o máximo desempenho e segurança das usinas que operamos.</p>
+        <p>Nosso compromisso é oferecer serviços de alta qualidade, com foco na eficiência e sustentabilidade. Trabalhamos com um modelo de operação remota que permite monitorar e gerenciar as usinas de forma eficiente, garantindo resultados excepcionais e suporte contínuo.</p>
+        
+        
+    </section>
+
+    <h1>Nossas atividades</h1>
+
+    <ul>
+        <li class="activity" data-target="om">
+            Operação e Manutenção (O&M)
+            <div id="om" class="content">
+                <p><span class="highlight">Os programas de OPERAÇÃO E MANUTENÇÃO (O&M)</span> da MCQ ELETROSERVICE LTDA garantem integração e produtividade, gerando economia e propiciando elevado grau de confiabilidade e segurança às instalações. Os Programas são desenvolvidos atendendo às especificidades de cada cliente, levando em consideração as particularidades da instalação. São implantados e executados em conjunto, de forma interativa, com o cliente, liberando seus recursos e talentos para sua atividade principal.</p>
+                <br>
+                <p><strong>Dentre as atividades da Engenharia de O&M destacam-se:</strong></p>
+                <br>
+                <ul>
+                    <li>Execução de Manutenção Preventiva, Preditiva e Corretiva;</li>
+                    <li>Execução de Operação de Equipamentos e Sistemas;</li>
+                    <li>Elaboração de manuais, instruções, guias e roteiros para manutenção de equipamentos e sistemas;</li>
+                    <li>Implantação de Planos de Manutenção Preventiva;</li>
+                    <li>Implantação de novos métodos e técnicas modernas de operação e manutenção;</li>
+                    <li>Elaboração, implantação e execução de programas de Gestão de Operação e Manutenção;</li>
+                    <li>Dimensionamento e especificação técnica de materiais, peças, componentes e equipamentos reserva e sobressalentes para utilização em manutenção;</li>
+                    <li>Auditoria Técnica em Procedimentos de Operação e Manutenção;</li>
+                    <li>Auditoria Técnica e Inspeção em instalações de geração e transmissão de energia elétrica;</li>
+                    <li>Utilização de software para a manutenção planejada em usinas, subestações e linhas de transmissão, permitindo o planejamento, controle e acompanhamento do desempenho dos equipamentos e sistemas, inclusive permitindo a atuação preventivamente de modo a evitar defeitos e falhas;</li>
+                </ul>
+            </div>
+            
+                </section>
+            </div>
+        </li>
+        <li class="activity" data-target="ep">
+            Engenharia do Proprietário
+            <div id="ep" class="content">
+                <!-- Conteúdo correspondente a Engenharia do Proprietário -->
+            </div>
+        </li>
+        <li class="activity" data-target="ensaios">
+            Ensaios Específicos
+            <div id="ensaios" class="content">
+                <!-- Conteúdo correspondente a Ensaios Específicos -->
+            </div>
+        </li>
+        <li class="activity" data-target="comissionamento">
+            Comissionamento
+            <div id="comissionamento" class="content">
+                <!-- Conteúdo correspondente a Comissionamento -->
+            </div>
+        </li>
+        <li class="activity" data-target="diligenciamento">
+            Diligenciamento
+            <div id="diligenciamento" class="content">
+                <!-- Conteúdo correspondente a Diligenciamento -->
+            </div>
+        </li>
+    </ul>
+
+   
+   <section id="usinas" class="container">
+    <h2 class="section-title">Usinas Sob Nossa Responsabilidade</h2>
+    
+    <!-- PCH Arturo Andreoli -->
+    <div class="usinas-content">
+        <h2>PCH Arturo Andreoli</h2>
+        <p>A Pequena Central Hidrelétrica Arturo Andreoli (Antiga PCH Foz do Chopim), iniciou sua operação comercial em outubro de 2001 e colabora com o desenvolvimento da indústria, comércio, agricultura, pecuária, mineração e outros setores. Esta PCH possui uma potência instalada de 29,07 MW e toda sua energia é comercializada através do mercado livre de energia. Sua outorga de autorização tem vigência até o ano de 2031. A Foz do Chopim Energética Ltda. é uma empresa formada entre a sociedade da Silea Participações Ltda. e a Copel Geração e Transmissão S.A.</p>
+        <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" class="transition-img">
+        <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" class="transition-img">
+        <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" class="transition-img">
+    </div>
+
+    <!-- PCH Bocaiuva -->
+    <div class="usinas-content">
+        <h2>PCH Bocaiuva</h2>
+        <p>A PCH Bocaiúva é um empreendimento que alia geração de energia e beleza, com suas águas límpidas e transparentes. A Pequena Central Hidrelétrica Bocaiúva, gerenciada pela Cravari Geração de Energia está localizada no rio Cravari, Município de Brasnorte, estado de Mato Grosso. A PCH Bocaiúva iniciou a sua operação em 2010 e possui uma potência instalada de 30,00 MW. Toda sua energia é comercializada através do mercado livre de energia e sua outorga de autorização tem vigência até o ano de 2040.</p>
+        <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="transition-img">
+        <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" class="transition-img">
+        <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista aérea TDA" class="transition-img">
+    </div>
+
+    <!-- PCH São Francisco -->
+    <div class="usinas-content">
+        <h2>PCH São Francisco</h2>
+        <p>A PCH São Francisco gera energia em um belo vale que fica apenas 20 minutos do centro do município. A Pequena Central Hidrelétrica São Francisco, está localizada no rio São Francisco Verdadeiro, o qual cruza os municípios de Toledo e Ouro Verde D’Oeste, no Estado do Paraná. A PCH São Francisco iniciou a sua operação em 2010 e possui uma potência instalada de 14,00 MW. Toda sua energia é comercializada através do mercado livre de energia e sua outorga de autorização tem vigência até o ano de 2040.</p>
+        <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="imagem aérea" class="transition-img">
+        <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista aérea TDA" class="transition-img">
+        <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="transition-img">
+    </div>
+</section>
+
+    
+    <section id="album">
+        <h2 class="section-title">Álbum de Imagens</h2>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" class="transition-img">
+                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" class="transition-img">
+                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" class="transition-img">
+                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="transition-img">
+                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" class="transition-img">
+                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista aérea TDA" class="transition-img">
+                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="imagem aérea" class="transition-img">
+                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista aérea TDA" class="transition-img">
+                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="transition-img">
+                <!-- Adicione mais imagens conforme necessário -->
+            </div>
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+    </section>
+    
+        </div>
+    </section>
+    
+    
+    <footer>
+        <p>&copy; 2024 MCQ Eletroservice. Todos os direitos reservados.</p>
+        <br>
+        <p>R. Cândido Xavier, 742, Água Verde - Curitiba/PR CEP: 80240-280</p>
+        <br>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="fab fa-facebook-f"></a>
+            <a href="https://linkedin.com" target="_blank" class="fab fa-linkedin-in"></a>
+            <a href="https://instagram.com" target="_blank" class="fab fa-instagram"></a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Função para adicionar e remover classes ao passar o mouse sobre as imagens do carrossel e das usinas
+    document.querySelectorAll('.carousel-images img, .usinas-content img').forEach(img => {
+        img.addEventListener('mouseover', function() {
+            this.classList.add('hovered'); // Adiciona a classe 'hovered'
+        });
+        img.addEventListener('mouseout', function() {
+            this.classList.remove('hovered'); // Remove a classe 'hovered'
+        });
+    });
+
+    // Função para mover os slides do carrossel
+    let currentIndex = 0;
+    function moveSlide(step) {
+        const slides = document.querySelectorAll('.carousel-images img');
+        const totalSlides = slides.length;
+        currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+        const offset = -currentIndex * 100;
+        document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+    }
+
+    // Inicializa o carrossel automaticamente (opcional)
+    function startCarousel() {
+        setInterval(() => moveSlide(1), 4000); // Troca de imagem a cada 4 segundos
+    }
+
+    startCarousel();
+
+    // Função para alternar a visibilidade do conteúdo dos botões
+    document.querySelectorAll('.toggle-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const targetId = button.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                button.textContent = 'Mostrar Detalhes';
+            } else {
+                content.classList.add('show');
+                button.textContent = 'Ocultar Detalhes';
+            }
+        });
+    });
+
+    // Função para alternar a visibilidade do conteúdo das atividades
+    document.querySelectorAll('#activities .activity').forEach(activity => {
+        activity.addEventListener('click', function() {
+            const targetId = activity.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+            } else {
+                document.querySelectorAll('#activities .content').forEach(c => c.classList.remove('show')); // Oculta outros conteúdos
+                content.classList.add('show');
+            }
+        });
+    });
+});
+
+
+</script>

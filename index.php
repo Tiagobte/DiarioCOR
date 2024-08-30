@@ -176,9 +176,15 @@
     </>
    
         </div>
-     <!-- Rodapé -->
-     <footer>
-        Tiago Pereira, 2024 - Centro de Operação Remota MCQ - Curitiba PR
+       <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Tiago Pereira Cordeiro. Todos os direitos reservados.</p>
+        <p>Contato: (41) 9194-5426 | Email: tiago.cor@mcq.com.br</p>
+        <div class="social-media">
+       <!--   <a href="linkedin.com/in/tiago-pereira-745a86191">Linkedin</a>
+            <a href="http://www.mcq.com.br/">Site</a>-->
+            <!-- Adicione mais links de redes sociais conforme necessário -->
+        </div>
     </footer>
 
    <style>
@@ -202,6 +208,7 @@
                 <a href="https://mcqcombr-my.sharepoint.com/:b:/g/personal/operacao_mcqcombr_onmicrosoft_com/EWXsLLRpuA5BrDE0dME-RdwBT6mpa4DPTptSV6qEpViI8g?e=vwco8x" class="button" target="_blank">MOR-GO-COR-006-R2 - Identificação e Resolução Falha na Comunicação com Sistemas Supervisórios</a>
 
             </div>
+            
  <!--
                 <div class="nested-menu-container">
                     <button id="btn-nested-menu">PO - Procedimento Operacional</button>
