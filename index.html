@@ -1,386 +1,568 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCQ ELETRO SERVICE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-       
-            
-/* Estilo para o contêiner do álbum */
-.album-content {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    margin-top: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+<style>/* Reset básico */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+
+/* Estilos para o cabeçalho */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-/* Estilo para parágrafos */
-.album-content p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-    font-size: 1.1em;
-    color: #34495e;
-    text-align: justify;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Estilo para listas */
-.album-content ul {
-    margin-left: 25px;
-    margin-bottom: 20px;
+.logo {
+    height: 50px; /* Ajuste a altura conforme necessário */
 }
 
-.album-content ul li {
-    margin-bottom: 12px;
-    line-height: 1.6;
-    font-size: 1.05em;
-    color: #2c3e50;
-    list-style-type: disc;
+.nav {
+    display: flex;
 }
 
-/* Destaque de palavras importantes */
-.album-content p span.highlight {
-    font-weight: bold;
-    color: #2980b9;
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-/* Estilo para os subtítulos */
-.album-content p strong {
-    font-size: 1.2em;
-    color: #2980b9;
+.nav-link:hover {
+    color: #f4a300; /* Cor de destaque */
 }
 
-
-/* Estilo das divs de conteúdo */
-.usinas-content {
-    margin-bottom: 40px;
+/* Estilo para o conteúdo que pode ser empurrado para baixo pelo cabeçalho fixo */
+body::after {
+    content: "";
+    display: block;
+    height: 60px; /* Altura do cabeçalho */
 }
 
-.usinas-content h2 {
-    font-size: 1.8em;
-    color: #2980b9;
-    margin-bottom: 10px;
-}
-
-.usinas-content p {
-    font-size: 1.1em;
-    color: #34495e;
-    background-color: #ffffff;
-    padding: 15px;
-    border-left: 5px solid #2980b9;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f8fa;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            padding: 20px 0;
-            color: #fff;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .logo-left {
-            width: 150px;
-            position: absolute;
-            left: 20px;
-            top: 10px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-        }
-
-        nav {
-            margin-top: 10px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #f39c12;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(to right, #2980b9, #2c3e50);
-            color: #fff;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0 0 20px;
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .hero button {
-            padding: 15px 30px;
-            font-size: 1em;
-            background-color: #f39c12;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 50px;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero button:hover {
-            background-color: #d35400;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5em;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .usinas-content {
-            margin-bottom: 40px;
-        }
-
-        .usinas-content h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .usinas-content p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .usinas-content img {
-            width: 30%;
-            height: auto;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .usinas img, .usinas-grid img, .album-carousel img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .usinas img:hover, .usinas-grid img:hover, .album-carousel img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .usinas-content h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .usinas-content p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
-
-        footer p {
-            margin: 5px 0;
-        }
-
-        .social-media a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-
-        .social-media a:hover {
-            color: #f39c12;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            .hero button {
-                font-size: 0.9em;
-            }
-
-            .album-carousel img {
-                height: 150px;
-            }
-        }
-        h1 {
-    font-size: 2em;
-    color: #2c3e50;
+    /* Estilo do cabeçalho */
+    header {
+        background-color: #2980b9;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header .logo-left {
+        height: 50px;
+    }
+    
+    header nav {
+        display: flex;
+    }
+    
+    header nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 1.1em;
+    }
+    
+    header nav a:hover {
+        text-decoration: underline;
+    }
+    
+    .hero {
+    background: url('icons/geração-distribuida-752x440.jpg') no-repeat center center/cover;
+    padding: 60px 0;
+    color: #fff;
     text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
+    position: relative;
 }
 
-li {
-    font-size: 1.2em;
-    color: #34495e;
-    margin: 10px 0;
-    padding: 10px;
-    list-style-type: none;
-    background-color: #ecf0f1;
-    border-left: 5px solid #2980b9;
-    border-radius: 5px;
-    font-family: 'Arial', sans-serif;
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
-li:hover {
-    background-color: #d1e7f0;
-    border-left: 5px solid #3498db;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+.hero-logo {
+    margin-bottom: 15px; /* Reduzido o espaço entre a logo e o texto */
 }
 
-/* Estilo da seção de serviços */
- #services {
-    padding: 40px 20px;
-    background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
+.hero-logo img {
+    max-width: 150px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .section-title {
-    font-size: 2.5em;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px; /* Aumentado o espaço abaixo do título para melhor visualização */
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 
-/* Estilo básico da lista */
-.activity {
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #34495e;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #ecf0f1;
-    border-left: 5px solid #2980b9;
-    border-radius: 5px;
-    list-style-type: none;
-    font-family: 'Arial', sans-serif;
+/* Estilo para o título dos serviços */
+.service-title {
+    font-size: 1.1rem; /* Tamanho da fonte */
+    font-weight: 600; /* Peso da fonte */
+    color: #e74c3c; /* Cor original do título */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
+    text-transform: uppercase; /* Título em maiúsculas */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Sombreado do texto */
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Transição suave */
 }
 
-.activity:hover {
-    background-color: #d1e7f0;
-    border-left-color: #3498db;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+/* Estilo para o título dos serviços ao passar o mouse */
+.service-title:hover {
+    color: #3498db; /* Nova cor suave para o título ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento do tamanho */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3); /* Aumenta o sombreado ao passar o mouse */
 }
 
-/* Estilo do conteúdo oculto */
-.content {
-    display: none;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-left: 3px solid #bdc3c7;
-    border-radius: 5px;
-    font-size: 1em;
-    color: #2c3e50;
-}
-
-.content p, .content ul {
-    margin: 0;
-    padding: 0;
-}
-
-.content ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-/* Estilo do carrossel */
-.carousel {
-    position: relative;
-    max-width: 50%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Imagens do carrossel */
-.carousel-images {
+/* Estilo do container de serviços para maior espaçamento e alinhamento */
+.services {
     display: flex;
-    transition: transform 0.10s ease;
-}
-
-/* Estilo das imagens dentro do carrossel */
-.carousel-images img {
-    width: calc(60% - 20px); /* Ajuste a largura da imagem com espaço entre elas */
-    flex-shrink: 0;
-    margin-right: 20px; /* Espaço entre imagens */
-}
-
-/* Remover o espaçamento da última imagem */
-.carousel-images img:last-child {
-    margin-right: 0;
-}
-.carousel-images img {
-    width: 60%;
-    flex-shrink: 0;
-    transition: transform 0.3s ease, border 0.3s ease; /* Transição suave */
-}
-
-.carousel-images img:hover {
-    transform: scale(1.1); /* Aumenta a escala da imagem */
-    border: 2px solid #3498db; /* Adiciona uma borda ao passar o mouse */
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os serviços */
+    justify-content: center; /* Alinhamento central dos serviços */
 }
 
 
-/* Botões de navegação do carrossel */
+
+.service-description {
+    font-size: 0.9rem; /* Texto legível e proporcional */
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.expertise-title {
+    font-size: 2.4em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+.expertise-description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title, .expertise-title {
+    font-size: 2.6em;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #0c0c0c, #f7c6c7);
+    background-clip: text; /* Adicionado para compatibilidade */
+    -webkit-background-clip: text; /* Prefixo para navegadores WebKit */
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 350px;
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b6b, #f7c6c7);
+    z-index: 0;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+.service-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.expertise-description {
+    font-size: 1.2em;
+    color: #ddd;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .service {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+    /* Estilo das seções */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #2980b9;
+    }
+    
+    .about-content p {
+        margin-bottom: 20px;
+    }
+    
+    .about-content p strong {
+        color: #2980b9;
+    }
+  
+    
+    .usinas-content h2 {
+        color: #2980b9;
+        margin-bottom: 10px;
+    }
+    
+    .usinas-content p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    /* Estilo da galeria */
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .image-slide img {
+        width: calc(33.33% - 20px);
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        max-width: 50%;
+        height: auto;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    
+    .image-slide img:hover {
+        transform: scale(1.05);
+    }
+    
+    /* Estilo do lightbox */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .lightbox-content {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+        max-height: 80%;
+    }
+    
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .close:hover {
+        color: #f1c40f;
+    }
+    
+    /* Estilo da galeria de imagens */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.gallery-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para o modal */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto com opacidade */
+}
+
+/* Estilo para a imagem no modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    transition: transform 0.3s ease;
+}
+
+/* Estilo para o botão de fechar o modal */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo da galeria de imagens */
+.gallery-img {
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom ao passar o mouse */
+.gallery-img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos gerais do footer */
+footer {
+    background-color: #2c3e50; /* Cor de fundo escura */
+    color: #ecf0f1; /* Texto claro */
+    padding: 30px 0; /* Espaçamento interno */
+    font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
+    border-top: 2px solid #3498db; /* Linha superior azul para destaque */
+    position: relative; /* Necessário para posicionar a assinatura */
+}
+
+/* Conteúdo do footer */
+.footer-content {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 20px; /* Espaçamento lateral */
+    text-align: center; /* Alinha o texto no centro */
+}
+
+/* Estilo dos parágrafos do footer */
+.footer-content p {
+    margin: 10px 0; /* Espaçamento entre os parágrafos */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+/* Endereço específico */
+.address {
+    margin-top: 10px; /* Espaçamento superior específico para o endereço */
+}
+
+/* Estilos das redes sociais */
+.social-media {
+    margin-top: 15px; /* Espaçamento superior para as redes sociais */
+}
+
+.social-media a {
+    color: #ecf0f1; /* Cor dos ícones */
+    font-size: 20px; /* Tamanho dos ícones */
+    margin: 0 15px; /* Espaçamento lateral entre ícones */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transição suave */
+    display: inline-block; /* Garante que o ícone é exibido corretamente */
+}
+
+.social-media a:hover {
+    color: #3498db; /* Cor ao passar o mouse */
+    transform: scale(1.2); /* Leve aumento ao passar o mouse */
+}
+
+/* Estilo da assinatura alinhada à direita */
+.signature {
+    position: absolute; /* Posiciona a assinatura fora do fluxo normal */
+    right: 20px; /* Alinha à direita com uma margem */
+    bottom: 20px; /* Alinha à parte inferior */
+    font-size: 12px; /* Tamanho da fonte da assinatura */
+    font-style: italic; /* Estilo em itálico para a assinatura */
+    color: #bdc3c7; /* Cor da assinatura */
+    margin: 0; /* Remove margens padrão */
+}
+
+/* Estilo da Seção Usinas */
+.usinas-section {
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('background-image.jpg') no-repeat center center/cover; /* Imagem de fundo com gradiente */
+    color: #fff; /* Texto branco para contraste */
+}
+
+/* Estilo da Seção Álbum */
+.album-section {
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background-image.jpg') no-repeat center center/cover;
+    color: #fff; /* Texto branco para contraste */
+}
+
+.section-title {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para destacar o título */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f1f1f1;
+}
+
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -388,159 +570,97 @@ li:hover {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: #fff;
     font-weight: bold;
     font-size: 18px;
-    border-radius: 0 3px 3px 0;
+    transition: 0.6s ease;
+    border-radius: 3px;
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .prev {
     left: 0;
-    border-radius: 3px 0 0 3px;
 }
 
-/* Estilos para o link do álbum completo */
-.view-all {
-    display: block;
-    text-align: center;
-    margin: 20px auto;
-    font-size: 1.2em;
-    color: #3498db;
-    text-decoration: none;
+.next {
+    right: 0;
 }
 
-.view-all:hover {
-    text-decoration: underline;
-}
-/* Estilo para o botão de mostrar detalhes */
-.toggle-button {
-    display: block;
-    margin: 10px 0;
-    padding: 8px 16px;
-    font-size: 1em;
-    color: #ffffff;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Design Responsivo */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2em;
+    }
+
+    .gallery-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
 
-.toggle-button:hover {
-    background-color: #2980b9;
-}
 
-/* Estilo para o conteúdo oculto */
-.album-content {
-    display: none;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo para o conteúdo exibido */
-.album-content.show {
-    display: block;
-}
-
-/* Estilo para o título da atividade */
-.activity-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #2c3e50;
-}
-#om.content {
-    font-size: 0.8em; /* Ajuste conforme necessário */
-}
-
-#om.content p {
-    font-size: 0.m; /* Ajuste conforme necessário */
-}
-
-#om.content ul {
-    font-size: 0.9em; /* Ajuste conforme necessário */
-}
-.carousel-images img.hovered {
-    transform: scale(1.1); /* Aumenta a escala da imagem */
-    border: 2px solid #3498db; /* Adiciona uma borda ao passar o mouse */
-}
-/* Estilo do container */
-#album {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Título da seção */
-.section-title {
-    font-size: 2em;
+.usinas-content {
     margin-bottom: 20px;
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Galeria de imagens */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+.usinas-content:hover {
+    transform: translateY(-10px); /* Efeito de levantar o bloco ao hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Sombra mais forte ao hover */
+}
+
+.usina-title {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background: linear-gradient(to right, #f7b733, #fc4a1a); /* Gradiente no título */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+.usina-description {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.image-gallery {
+    display: flex;
     justify-content: center;
-}
-
-/* Imagens da galeria */
-.gallery-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-.hovered {
-    opacity: 0.8; /* Exemplo: reduz a opacidade */
-    transform: scale(1.05); /* Exemplo: aumenta levemente a imagem */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-#album {
-    max-width: 1000px;
-    margin: 0 auto;
+    gap: 15px;
     overflow: hidden;
 }
 
-.gallery {
-    display: flex;
-    overflow: hidden;
-    width: 100%; /* Ajuste o tamanho conforme necessário */
+.image-slide img {
+    width: 100%; /* Assegura que a imagem ocupe 100% do contêiner */
+    max-width: 300px; /* Define a largura máxima da imagem */
+    height: auto; /* Mantém a proporção original da imagem */
 }
 
-.gallery-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+/* Design Responsivo */
+@media (max-width: 768px) {
+    .image-slide {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.gallery-img {
-    width: 20%; /* Cinco imagens visíveis ao mesmo tempo */
-    margin-right: 10px; /* Espaçamento entre as imagens */
-    cursor: pointer;
-}
+    .usina-title {
+        font-size: 1.8em;
+    }
 
-.gallery-img:last-child {
-    margin-right: 0;
-}
-
+  
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -549,355 +669,527 @@ li:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
     justify-content: center;
     align-items: center;
 }
 
-.modal img {
+.modal-content {
     max-width: 80%;
     max-height: 80%;
+    margin: auto;
+    border-radius: 8px;
 }
 
-.modal.active {
-    display: flex;
-}
-
-.close-modal {
+.close {
     position: absolute;
     top: 20px;
-    right: 30px;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff;
+    right: 25px;
+    font-size: 2rem;
+    color: #ffffff;
     cursor: pointer;
 }
-/* Estilos da galeria */
-.gallery-wrapper {
-    overflow: hidden;
-    position: relative;
+/* Estilo da Seção Sobre */
+.about {
+    background: linear-gradient(135deg, #004d40, #00796b); /* Gradiente verde escuro para verde claro */
+    color: #ffffff;
+    padding: 80px 0;
 }
 
-.gallery {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-content {
     display: flex;
-    transition: transform 0.5s ease-out;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    gap: 30px;
 }
 
-.gallery-img {
+/* Seção About */
+.about {
+    background: #f4f4f4; /* Fundo claro para contraste */
+    padding: 40px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text {
+        padding-left: 0;
+    }
+}
+
+}
+/* Seção Sobre a Empresa */
+.secao-sobre {
+    background: #f4f7f9; /* Fundo suave */
+    padding: 80px 20px; /* Espaçamento interno confortável */
+    text-align: center; /* Centraliza o texto */
+    border-radius: 20px; /* Cantos arredondados */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); /* Sombra mais pronunciada */
+    margin: 60px auto; /* Margem superior e inferior */
+    max-width: 1200px; /* Largura máxima da seção */
+    position: relative; /* Para posicionamento de elementos internos */
+    overflow: hidden; /* Para esconder bordas em caso de animações */
+    background: linear-gradient(135deg, #ffffff, #e0e5ec); /* Gradiente moderno */
+}
+
+/* Logo */
+.sobre-logo {
+    margin-bottom: 40px; /* Espaço entre o logo e o texto */
+    position: relative; /* Para posicionar efeitos sobre o logo */
+}
+
+.sobre-logo img {
+    max-width: 250px; /* Tamanho máximo do logo */
+    height: auto; /* Mantém a proporção do logo */
+    border-radius: 15px; /* Cantos arredondados */
+    border: 8px solid #3498db; /* Borda colorida */
+    padding: 15px; /* Espaçamento interno ao redor da imagem */
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra mais acentuada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.sobre-logo img:hover {
+    transform: scale(1.1); /* Aumento suave do logo no hover */
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2); /* Aumento da sombra no hover */
+}
+
+/* Título */
+.sobre-titulo {
+    font-size: 4em; /* Tamanho grande do título */
+    color: #2c3e50; /* Cor escura e elegante */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    font-weight: 900; /* Negrito muito forte para o título */
+    text-transform: uppercase; /* Maiúsculas para destaque */
+    letter-spacing: 3px; /* Espaçamento entre letras mais amplo */
+    line-height: 1.3; /* Altura da linha mais compacta */
+    position: relative; /* Para adicionar efeitos sobre o título */
     display: inline-block;
-    width: 20%; /* Ajuste a largura conforme necessário */
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    padding: 15px; /* Espaçamento interno */
+    background: linear-gradient(135deg, #3498db, #2c3e50); /* Gradiente de fundo do texto */
+    color: #fff; /* Cor do texto */
+    border-radius: 10px; /* Bordas arredondadas */
 }
 
-.gallery-img.fade-out {
-    opacity: 0;
+.sobre-titulo::before {
+    content: "";
+    position: absolute;
+    bottom: -15px; /* Posição abaixo do texto */
+    left: 50%;
+    width: 120px; /* Largura da linha decorativa */
+    height: 6px;
+    background-color: #e74c3c; /* Linha decorativa */
+    transform: translateX(-50%);
+    border-radius: 5px; /* Bordas arredondadas na linha */
+    animation: pulse 1.5s infinite; /* Animação de pulsação */
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scaleX(1);
+    }
+    50% {
+        transform: translateX(-50%) scaleX(1.2);
+    }
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/* Descrição */
+.sobre-descricao {
+    font-size: 1.25em; /* Tamanho da fonte do parágrafo */
+    color: #34495e; /* Cor do texto moderna e agradável */
+    line-height: 1.8; /* Altura da linha para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o texto */
+    max-width: 850px; /* Largura máxima do texto */
+    text-align: justify; /* Justifica o texto */
+    padding: 0 20px; /* Adiciona um pouco de espaçamento lateral */
+    position: relative; /* Para posicionar efeitos */
+    transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+.sobre-descricao:hover {
+    color: #3498db; /* Cor do texto muda ao passar o mouse */
+}
+
+.sobre-descricao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background-color: #3498db; /* Barra lateral decorativa */
+    transform: scaleY(0); /* Inicialmente oculta */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.sobre-descricao:hover::before {
+    transform: scaleY(1); /* Mostra a barra lateral ao passar o mouse */
+}
+
+/* Botão CTA */
+.boton-cta {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #3498db; /* Cor de fundo do botão */
+    border-radius: 8px; /* Cantos arredondados do botão */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+    margin-top: 30px; /* Espaço acima do botão */
+    font-weight: 600; /* Font-weight mais forte para o botão */
+}
+
+.boton-cta:hover {
+    background-color: #2980b9; /* Cor mais escura no hover */
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
 }
 
 </style>
-</head>
-<body>
-    <header>
-        <img src="icons/logo-mcq.png" alt="Logo da Empresa" class="logo-left">
-        <nav>
-            <a href="#about">Sobre a Empresa</a>
-            <a href="#usinas">Usinas</a>
-            <a href="#album">Álbum</a>
-        </nav>
-    </header>
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img id="lightbox-img" class="lightbox-content">
-        <div id="caption"></div>
-    </div>
-    
-    <section class="hero">
-        <div class="container">
-         <p>Nossos Serviços: <br>
-            <br>
-            Operação e Manutenção (O&M), Engenharia do Proprietário, Ensaios Específicos, Comissionamento e Diligenciamentos. <br>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ ELETRO SERVICE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <body>
+        <header class="header">
+            <div class="header-container">
+                <img src="icons/logo-mcq.png" alt="Logo da Empresa" class="logo">
+                <nav class="nav">
+                    <a href="#about" class="nav-link">Sobre a Empresa</a>
+                    <a href="#usinas" class="nav-link">Usinas</a>
+                    <a href="#album" class="nav-link">Álbum</a>
+                    <a href="index.php">Painel de Ferramentas OTR</a>
+
+                </nav>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-logo">
+                        <img src="icons/logo-mcq.png" alt="Logo da Empresa">
+                    </div>
+                    <h2 class="section-title">Nossos Serviços</h2>
+                    <div class="services">
+                        <div class="service">
+                            <div class="service-icon">
+                                <!-- Ícone pode ser adicionado aqui -->
+                            </div>
+                            <h3 class="service-title">Operação e Manutenção (O&M)</h3>
+                            <p class="service-description">
+                                Garantimos a operação contínua e eficiente de suas usinas com nossos serviços de manutenção preventiva e corretiva. Nossa abordagem proativa minimiza interrupções e maximiza a eficiência dos sistemas.
+                            </p>
+                        </div>
+                        <div class="service">
+                            <div class="service-icon">
+                                <!-- Ícone pode ser adicionado aqui -->
+                            </div>
+                            <h3 class="service-title">Engenharia do Proprietário</h3>
+                            <p class="service-description">
+                                Oferecemos suporte técnico abrangente desde a concepção até a conclusão do projeto. Nossos engenheiros garantem que todas as especificações e requisitos sejam atendidos com precisão.
+                            </p>
+                        </div>
+                        <div class="service">
+                            <div class="service-icon">
+                                <!-- Ícone pode ser adicionado aqui -->
+                            </div>
+                            <h3 class="service-title">Ensaios Específicos</h3>
+                            <p class="service-description">
+                                Realizamos testes detalhados para assegurar que seus sistemas e equipamentos estejam funcionando conforme as normas e padrões estabelecidos. Nossos ensaios garantem a qualidade e a confiabilidade.
+                            </p>
+                        </div>
+                        <div class="service">
+                            <div class="service-icon">
+                                <!-- Ícone pode ser adicionado aqui -->
+                            </div>
+                            <h3 class="service-title">Comissionamento e Diligenciamentos</h3>
+                            <p class="service-description">
+                                Asseguramos que todas as instalações e sistemas estejam prontos para operação através de inspeções e validações finais. Nosso objetivo é garantir que sua operação inicie com o pé direito.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+            <section id="sobre" class="secao-sobre">
+                <div class="container">
+                    <div class="sobre-conteudo">
+                        <div class="sobre-logo">
+                            <img src="icons/logo-mcq.png" alt="Logo da Empresa">
+                        </div>
+                        <h1 class="sobre-titulo">Sobre a MCQ ELETROSERVICE LTDA.</h1>
+                        <p class="sobre-descricao">
+                            Desde sua fundação em 1999, a MCQ ELETROSERVICE LTDA. se destaca como uma referência no setor energético. Nossa trajetória é marcada por serviços de excelência, com um compromisso inabalável com a qualidade e inovação.
+                        </p>
+                        <p class="sobre-descricao">
+                            Criada por engenheiros veteranos da COPEL, nossa empresa é líder em comissionamento, operação, manutenção e consultoria. Incorporamos tecnologias avançadas e uma abordagem inovadora para oferecer soluções sob medida que atendem às necessidades exclusivas de cada cliente.
+                        </p>
+                        <p class="sobre-descricao">
+                            Nossa missão é garantir a máxima excelência técnica e econômica em todos os projetos de Geração e Transmissão de Energia. Com um foco contínuo em inovação e sustentabilidade, proporcionamos um serviço diferenciado que agrega valor real e confiança, assegurando resultados que impulsionam o sucesso de nossos parceiros.
+                        </p>
+                        <!-- Exemplo de botão, se necessário -->
+                        <!-- <a href="#" class="boton-cta">Saiba Mais</a> -->
+                    </div>
+                </div>
+            </section>
             
-            <br>Expertise:
-            <br>
-            <br>
-            Somos especializados em fornecer soluções integradas para usinas hidrelétricas, termoelétricas, eólicas e fotovoltaicas, garantindo excelência e confiabilidade em cada etapa do projeto.</p>
-            <button>Saiba Mais</button>
+            
+        
+        
+    </body>
+    
+    <section id="usinas" class="usinas-section">
+        <h2 class="section-title">Estamos Presentes (O&M)</h2>
+
+               <!-- PCH Alto Sucuriu -->
+               <div class="usinas-content">
+                <h3 class="usina-title">PCH Alto Sucuriú</h3>
+                <p class="usina-description">
+ PCH Alto Sucuriú atua no ramo de geração de energia, sendo uma das referências no estado em geração e qualidade ambiental.
+
+A Pequena Central Hidrelétrica Alto Sucuriú está localizada no rio Sucuriú, que passa pelos Municípios de Chapadão do Sul e Paraíso das Águas, todos no estado de Mato Grosso do Sul.
+
+Esta PCH iniciou a sua operação em 2008 e possui uma potência instalada de 29,00 MW. Toda sua energia é comercializada através do mercado livre de energia e sua outorga de autorização tem vigência até o ano de 2035.                </p>
+                
+                <div class="image-gallery">
+                    <div class="image-slide">
+                        <img src="icons/Usinas/PCH Alto Sucuriú/PCH-ALTO-SUCURIU-01.jpg" alt="Imagem Aérea" onclick="openModal(this)">
+                        <img src="icons/Usinas/PCH Alto Sucuriú/PCH-ALTO-SUCURIU-02-1600x900.jpg" alt="Vista Aérea TDA" onclick="openModal(this)">
+                        <img src="icons/Usinas/PCH Alto Sucuriú/PCH-ALTO-SUCURIU-03.jpg" alt="Imagem Aérea Noturna" onclick="openModal(this)">
+                        <img src="icons/Usinas/PCH Alto Sucuriú/PCH-ALTO-SUCURIU-04.jpg" alt="Vista montante - noturna" onclick="openModal(this)">
+                        <img src="icons/Usinas/PCH Alto Sucuriú/PCH-ALTO-SUCURIU-07-1600x900.jpg" alt="Casa de Força" onclick="openModal(this)">
+                      
+                    </div>
+                </div>
+            </div>
+    
+        <!-- PCH Arturo Andreoli -->
+        <div class="usinas-content">
+            <h3 class="usina-title">PCH Arturo Andreoli</h3>
+            <p class="usina-description">
+                A Pequena Central Hidrelétrica Arturo Andreoli (Antiga PCH Foz do Chopim) iniciou sua operação comercial em outubro de 2001 e desempenha um papel importante no desenvolvimento dos setores industrial, comercial, agrícola e outros. Com uma potência instalada de 29,07 MW, toda a energia é comercializada no mercado livre. A autorização está vigente até 2031, e a operação é gerida pela Foz do Chopim Energética Ltda., formada pela Silea Participações Ltda. e Copel Geração e Transmissão S.A.
+            </p>
+            
+            <div class="image-gallery">
+                <div class="image-slide">
+                    <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" onclick="openModal(this)">
+                    <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" onclick="openModal(this)">
+                    <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" onclick="openModal(this)">
+                    <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-03-1600x900.jpg" alt="PCH Arturo Andreoli" onclick="openModal(this)">
+                    <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-05-1600x900.jpg" alt="PCH Arturo Andreoli" onclick="openModal(this)">
+
+                </div>
+            </div>
         </div>
-     
-    </section>
-
-    <section id="about" class="container">
-        <h2 class="section-title">Sobre a Empresa</h2>
-
-        <p>Uma empresa fundada em 1999 por engenheiros com vasta experiência no setor energético - oriundos da COPEL, Companhia Paranaense de Energia - com o objetivo de oferecer ao mercado SERVIÇOS EM ENERGIA, justamente com base na experiência, know-how e tecnologia adquiridas por estes profissionais em comissionamento, operação, manutenção, consultoria, entre outros, nas áreas de Geração e Transmissão de Energia. 
-            A MCQ ELETROSERVICE LTDA. oferece ao mercado serviços específicos e diferenciados, para atender às necessidades e exigências do cliente e do mercado, com flexibilidade, qualidade, prazos e a melhor tecnologia, buscando sempre proporcionar vantagens técnicas e econômicas aos clientes.</p>
-        <p>A MCQ Eletroservice é uma empresa líder em soluções de manutenção e operação para usinas hidrelétricas, termoelétricas, eólicas e fotovoltaicas. Com sede em Curitiba, PR, nossa equipe é composta por especialistas altamente treinados que utilizam tecnologia avançada para garantir o máximo desempenho e segurança das usinas que operamos.</p>
-        <p>Nosso compromisso é oferecer serviços de alta qualidade, com foco na eficiência e sustentabilidade. Trabalhamos com um modelo de operação remota que permite monitorar e gerenciar as usinas de forma eficiente, garantindo resultados excepcionais e suporte contínuo.</p>
-        
-        
-    </section>
-
-    <h1>Nossas atividades</h1>
-
-    <ul>
-        <li class="activity" data-target="om">
-            Operação e Manutenção (O&M)
-            <div id="om" class="content">
-                <p><span class="highlight">Os programas de OPERAÇÃO E MANUTENÇÃO (O&M)</span> da MCQ ELETROSERVICE LTDA garantem integração e produtividade, gerando economia e propiciando elevado grau de confiabilidade e segurança às instalações. Os Programas são desenvolvidos atendendo às especificidades de cada cliente, levando em consideração as particularidades da instalação. São implantados e executados em conjunto, de forma interativa, com o cliente, liberando seus recursos e talentos para sua atividade principal.</p>
-                <br>
-                <p><strong>Dentre as atividades da Engenharia de O&M destacam-se:</strong></p>
-                <br>
-                <ul>
-                    <li>Execução de Manutenção Preventiva, Preditiva e Corretiva;</li>
-                    <li>Execução de Operação de Equipamentos e Sistemas;</li>
-                    <li>Elaboração de manuais, instruções, guias e roteiros para manutenção de equipamentos e sistemas;</li>
-                    <li>Implantação de Planos de Manutenção Preventiva;</li>
-                    <li>Implantação de novos métodos e técnicas modernas de operação e manutenção;</li>
-                    <li>Elaboração, implantação e execução de programas de Gestão de Operação e Manutenção;</li>
-                    <li>Dimensionamento e especificação técnica de materiais, peças, componentes e equipamentos reserva e sobressalentes para utilização em manutenção;</li>
-                    <li>Auditoria Técnica em Procedimentos de Operação e Manutenção;</li>
-                    <li>Auditoria Técnica e Inspeção em instalações de geração e transmissão de energia elétrica;</li>
-                    <li>Utilização de software para a manutenção planejada em usinas, subestações e linhas de transmissão, permitindo o planejamento, controle e acompanhamento do desempenho dos equipamentos e sistemas, inclusive permitindo a atuação preventivamente de modo a evitar defeitos e falhas;</li>
-                </ul>
-            </div>
-            
-                </section>
-            </div>
-        </li>
-        <li class="activity" data-target="ep">
-            Engenharia do Proprietário
-            <div id="ep" class="content">
-                <!-- Conteúdo correspondente a Engenharia do Proprietário -->
-            </div>
-        </li>
-        <li class="activity" data-target="ensaios">
-            Ensaios Específicos
-            <div id="ensaios" class="content">
-                <!-- Conteúdo correspondente a Ensaios Específicos -->
-            </div>
-        </li>
-        <li class="activity" data-target="comissionamento">
-            Comissionamento
-            <div id="comissionamento" class="content">
-                <!-- Conteúdo correspondente a Comissionamento -->
-            </div>
-        </li>
-        <li class="activity" data-target="diligenciamento">
-            Diligenciamento
-            <div id="diligenciamento" class="content">
-                <!-- Conteúdo correspondente a Diligenciamento -->
-            </div>
-        </li>
-    </ul>
-
-   
-   <section id="usinas" class="container">
-    <h2 class="section-title">Usinas Sob Nossa Responsabilidade</h2>
     
-    <!-- PCH Arturo Andreoli -->
-    <div class="usinas-content">
-        <h2>PCH Arturo Andreoli</h2>
-        <p>A Pequena Central Hidrelétrica Arturo Andreoli (Antiga PCH Foz do Chopim), iniciou sua operação comercial em outubro de 2001 e colabora com o desenvolvimento da indústria, comércio, agricultura, pecuária, mineração e outros setores. Esta PCH possui uma potência instalada de 29,07 MW e toda sua energia é comercializada através do mercado livre de energia. Sua outorga de autorização tem vigência até o ano de 2031. A Foz do Chopim Energética Ltda. é uma empresa formada entre a sociedade da Silea Participações Ltda. e a Copel Geração e Transmissão S.A.</p>
-        <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" class="transition-img">
-        <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" class="transition-img">
-        <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" class="transition-img">
-    </div>
+        <!-- PCH Bocaiuva -->
+        <div class="usinas-content">
+            <h3 class="usina-title">PCH Bocaiuva</h3>
+            <p class="usina-description">
+                Localizada no rio Cravari, a PCH Bocaiúva combina geração de energia com um cenário natural impressionante. Iniciada em 2010 e com uma potência instalada de 30,00 MW, a energia é comercializada no mercado livre, e a autorização é válida até 2040. A gestão está a cargo da Cravari Geração de Energia.
+            </p>
+            
+            <div class="image-gallery">
+                <div class="image-slide">
+                    <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Câmara de Carga" onclick="openModal(this)">
+                    <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" onclick="openModal(this)">
+                    <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista Aérea TDA" onclick="openModal(this)">
+                    <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-01.jpg" alt="Vista Aérea TDA" onclick="openModal(this)">
+                    <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-05.jpg" alt="Vista Aérea TDA" onclick="openModal(this)">
 
-    <!-- PCH Bocaiuva -->
-    <div class="usinas-content">
-        <h2>PCH Bocaiuva</h2>
-        <p>A PCH Bocaiúva é um empreendimento que alia geração de energia e beleza, com suas águas límpidas e transparentes. A Pequena Central Hidrelétrica Bocaiúva, gerenciada pela Cravari Geração de Energia está localizada no rio Cravari, Município de Brasnorte, estado de Mato Grosso. A PCH Bocaiúva iniciou a sua operação em 2010 e possui uma potência instalada de 30,00 MW. Toda sua energia é comercializada através do mercado livre de energia e sua outorga de autorização tem vigência até o ano de 2040.</p>
-        <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="transition-img">
-        <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" class="transition-img">
-        <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista aérea TDA" class="transition-img">
-    </div>
-
+                </div>
+            </div>
+        </div>
+    
     <!-- PCH São Francisco -->
-    <div class="usinas-content">
-        <h2>PCH São Francisco</h2>
-        <p>A PCH São Francisco gera energia em um belo vale que fica apenas 20 minutos do centro do município. A Pequena Central Hidrelétrica São Francisco, está localizada no rio São Francisco Verdadeiro, o qual cruza os municípios de Toledo e Ouro Verde D’Oeste, no Estado do Paraná. A PCH São Francisco iniciou a sua operação em 2010 e possui uma potência instalada de 14,00 MW. Toda sua energia é comercializada através do mercado livre de energia e sua outorga de autorização tem vigência até o ano de 2040.</p>
-        <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="imagem aérea" class="transition-img">
-        <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista aérea TDA" class="transition-img">
-        <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="transition-img">
+<div class="usinas-content">
+    <h3 class="usina-title">PCH São Francisco</h3>
+    <p class="usina-description">
+        Situada no vale a apenas 20 minutos do centro de Toledo, a PCH São Francisco está no rio São Francisco Verdadeiro, abrangendo os municípios de Toledo e Ouro Verde D’Oeste, Paraná. Com operação iniciada em 2010 e potência de 14,00 MW, toda a energia é comercializada no mercado livre, com autorização válida até 2040.
+    </p>
+    
+    <div class="image-gallery">
+        <div class="image-slide">
+            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="Imagem Aérea" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista Aérea TDA" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Bocaiuva/PCH-SAO-FRANCISCO-04-1600x900.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+        </div>
     </div>
-</section>
-<div class="modal">
-    <span class="close-modal">&times;</span>
-    <img src="" alt="Imagem Ampliada">
 </div>
 
+<!-- Modal -->
+<div id="modal" class="modal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-image">
+</div>
 
-
-    
-<section id="album">
-    <h2 class="section-title">Álbum de Imagens</h2>
-    <div class="gallery">
-        <div class="gallery-wrapper">
-            <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" class="gallery-img">
-            <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" class="gallery-img">
-            <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" class="gallery-img">
-            <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="gallery-img">
-            <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" class="gallery-img">
-            <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista aérea TDA" class="gallery-img">
-            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="imagem aérea" class="gallery-img">
-            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista aérea TDA" class="gallery-img">
-            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="gallery-img">
-            <img src="icons/Usinas/Santa Clara/01.JPG" alt="Casa de Força" class="gallery-img">
-            <img src="icons/Usinas/Santa Clara/02.JPG" alt="Casa de Força" class="gallery-img">
-            <img src="icons/Usinas/Santa Clara/03.JPG" alt="Casa de Força" class="gallery-img">
-            <img src="icons/Usinas/Santa Clara/05.JPG" alt="Casa de Força" class="gallery-img">
-        </div>
-        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-        <a class="next" onclick="moveSlide(1)">&#10095;</a>
-    </div>
-</section>
-
-    
-        </div>
     </section>
     
     
-    <footer>
-        <p>&copy; 2024 MCQ Eletroservice. Todos os direitos reservados.</p>
-        <br>
-        <p>R. Cândido Xavier, 742, Água Verde - Curitiba/PR CEP: 80240-280</p>
-        <br>
-        <div class="social-media">
-            <a href="https://facebook.com" target="_blank" class="fab fa-facebook-f"></a>
-            <a href="https://linkedin.com" target="_blank" class="fab fa-linkedin-in"></a>
-            <a href="https://instagram.com" target="_blank" class="fab fa-instagram"></a>
+ 
+    <section id="album" class="album-section">
+        <h2 class="section-title">Galeria de Imagens</h2>
+        <div class="gallery">
+            <div class="gallery-wrapper">
+                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista aérea TDA" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="imagem aérea" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista aérea TDA" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Santa Clara/01.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Santa Clara/02.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Santa Clara/03.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+                <img src="icons/Usinas/Santa Clara/05.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            </div>
         </div>
-    </footer>
+    
+        <!-- Modal para exibir a imagem em tamanho grande -->
+        <div id="modal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+            <a class="next" onclick="changeImage(1)">&#10095;</a>
+        </div>
+    </section>
+    
+
+
+</section>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 MCQ Eletroservice. Todos os direitos reservados.</p>
+        <p class="address">R. Cândido Xavier, 742, Água Verde - Curitiba/PR CEP: 80240-280</p>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" class="fab fa-facebook-f" aria-label="Facebook"></a>
+            <a href="https://linkedin.com" target="_blank" class="fab fa-linkedin-in" aria-label="LinkedIn"></a>
+            <a href="https://instagram.com" target="_blank" class="fab fa-instagram" aria-label="Instagram"></a>
+        </div>
+        <p class="signature">Tiago Pereira @2024</p>
+    </div>
+</footer>
+
 </body>
 </html>
 
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Função para adicionar e remover classes ao passar o mouse sobre as imagens do carrossel e das usinas
-    document.querySelectorAll('.carousel-images img, .usinas-content img').forEach(img => {
-        img.addEventListener('mouseover', function() {
-            this.classList.add('hovered'); // Adiciona a classe 'hovered'
-        });
-        img.addEventListener('mouseout', function() {
-            this.classList.remove('hovered'); // Remove a classe 'hovered'
-        });
-    });
-
-    // Função para mover os slides do carrossel
-    let carouselIndex = 0;
-    function moveCarouselSlide(step) {
-        const slides = document.querySelectorAll('.carousel-images img');
-        const totalSlides = slides.length;
-        carouselIndex = (carouselIndex + step + totalSlides) % totalSlides;
-        const offset = -carouselIndex * 100;
-        document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+<script>// Função para abrir o modal com a imagem ampliada
+    function openModal(img) {
+        var modal = document.getElementById('modal');
+        var modalImg = document.getElementById('modal-image');
+        modal.style.display = "block";
+        modalImg.src = img.src;
     }
-
-    // Inicializa o carrossel automaticamente
-    function startCarousel() {
-        setInterval(() => moveCarouselSlide(1), 4000); // Troca de imagem a cada 4 segundos
+    
+    // Função para fechar o modal
+    function closeModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = "none";
     }
-
-    startCarousel();
-
-    // Função para alternar a visibilidade do conteúdo dos botões
-    document.querySelectorAll('.toggle-button').forEach(button => {
-        button.addEventListener('click', function () {
-            const targetId = button.getAttribute('data-target');
-            const content = document.getElementById(targetId);
-
-            if (content.classList.contains('show')) {
-                content.classList.remove('show');
-                button.textContent = 'Mostrar Detalhes';
-            } else {
-                content.classList.add('show');
-                button.textContent = 'Ocultar Detalhes';
-            }
-        });
-    });
-
-    // Função para alternar a visibilidade do conteúdo das atividades
-    document.querySelectorAll('#activities .activity').forEach(activity => {
-        activity.addEventListener('click', function() {
-            const targetId = activity.getAttribute('data-target');
-            const content = document.getElementById(targetId);
-
-            if (content.classList.contains('show')) {
-                content.classList.remove('show');
-            } else {
-                document.querySelectorAll('#activities .content').forEach(c => c.classList.remove('show')); // Oculta outros conteúdos
-                content.classList.add('show');
-            }
-        });
-    });
-
-    // Função para mostrar e mover as imagens na galeria
-    const images = document.querySelectorAll('.gallery-img');
-    const totalImages = images.length;
-    const imagesToShow = 5;
-    let galleryIndex = 0;
-
-    // Função para mostrar o grupo de imagens atual
-    function showGallerySlide(index) {
-        images.forEach((img, i) => {
-            img.style.display = (i >= index && i < index + imagesToShow) ? 'inline-block' : 'none';
-            img.classList.remove('fade-out');
-        });
+    
+    // Função para abrir o lightbox
+    function openLightbox(img) {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        var caption = document.getElementById('caption');
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+        caption.innerHTML = img.alt;
     }
-
-    // Função para mover os slides e aplicar o efeito de transição
-    function moveGallerySlide(step) {
-        const galleryWrapper = document.querySelector('.gallery-wrapper');
-        const imageWidth = images[0].offsetWidth + parseInt(window.getComputedStyle(images[0]).marginRight);
-
-        // Aplica o efeito de fade-out nas imagens atuais
-        images.forEach((img, i) => {
-            if (i >= galleryIndex && i < galleryIndex + imagesToShow) {
-                img.classList.add('fade-out');
-            }
-        });
-
-        // Atualiza o índice da galeria
-        galleryIndex += step;
-        if (galleryIndex > totalImages - imagesToShow) {
-            galleryIndex = 0; // Volta ao início
-        } else if (galleryIndex < 0) {
-            galleryIndex = totalImages - imagesToShow; // Vai para o final
+    
+    // Função para fechar o lightbox
+    function closeLightbox() {
+        var lightbox = document.getElementById('lightbox');
+        lightbox.style.display = "none";
+    }
+    
+    // Adiciona event listener ao fechar do lightbox
+    document.querySelector('.close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closeLightbox();
         }
+    });
+    
+    // Adiciona event listener ao fechar do modal
+    document.querySelector('.close-modal').addEventListener('click', closeModal);
+    document.querySelector('.modal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closeModal();
+        }
+    });
 
-        // Move o wrapper da galeria na direção desejada
-        galleryWrapper.style.transform = `translateX(-${galleryIndex * imageWidth}px)`;
+        // album de fotos
 
-        // Mostra novas imagens após o efeito de fade-out
-        setTimeout(() => {
-            showGallerySlide(galleryIndex);
-        }, 500); // Tempo do efeito de fade-out
+    let currentImageIndex = 0;
+
+function openModal(element) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modal-image');
+    const images = document.querySelectorAll('.gallery-img');
+
+    currentImageIndex = Array.from(images).indexOf(element);
+    modalImage.src = element.src;
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+function changeImage(n) {
+    const images = document.querySelectorAll('.gallery-img');
+    currentImageIndex = (currentImageIndex + n + images.length) % images.length;
+    document.getElementById('modal-image').src = images[currentImageIndex].src;
+}
+function openModal(element) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modal-image');
+
+    modalImage.src = element.src;
+    modal.style.display = 'block';
+
+    // Fechar o modal quando o mouse sair da imagem no modal
+    modalImage.onmouseleave = function() {
+        closeModal();
+    };
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Adiciona event listener ao modal para fechar ao clicar fora da imagem
+document.getElementById('modal').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeModal();
     }
-
-    // Inicia mostrando as primeiras 5 imagens
-    showGallerySlide(galleryIndex);
-
-    // Mover automaticamente após um intervalo de tempo
-    setInterval(() => moveGallerySlide(1), 3000); // 3 segundos
-
-    // Adiciona eventos às setas de navegação da galeria
-    document.querySelector('.prev').addEventListener('click', () => moveGallerySlide(-1));
-    document.querySelector('.next').addEventListener('click', () => moveGallerySlide(1));
-
-    // Adicionar funcionalidade de ampliação da imagem
-    document.querySelectorAll('.gallery-img').forEach(img => {
-        img.addEventListener('click', () => {
-            const modal = document.querySelector('.modal');
-            modal.querySelector('img').src = img.src;
-            modal.classList.add('active');
-        });
-    });
-
-    // Fechar o modal ao clicar no "X"
-    document.querySelector('.close-modal').addEventListener('click', () => {
-        document.querySelector('.modal').classList.remove('active');
-    });
 });
 
 </script>

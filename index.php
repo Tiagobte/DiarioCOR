@@ -10,10 +10,13 @@
     <img src="icons/logo-mcq.png" alt="Logo da Empresa Esquerda" class="logo-left">
 
     <h1>Centro de Operação Remota - Painel de Ferramentas</h1>
+    
+
    <!-- <form action="logout.php" method="POST">
     <button type="submit" class="menu-button">Sair</button>-->
 </form>
 
+<a href="index.html" class="button">Página MCQ</a>
 
   
 </header>
@@ -353,6 +356,7 @@ h2 {
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Aumentar a sombra no hover */
 }
+
 
 /* Ajuste da tipografia e espaçamento */
 #btn-documentos-procedimentos {
