@@ -1,5 +1,8 @@
 
-<style>/* Reset básico */
+<style>
+
+
+/* Reset básico */
     * {
         margin: 0;
         padding: 0;
@@ -341,96 +344,118 @@ body::after {
     .close:hover {
         color: #f1c40f;
     }
-    
-    /* Estilo da galeria de imagens */
+   /* Estilo para a galeria */
+.album-section {
+    padding: 20px;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+    gap: 10px; /* Espaço entre as imagens */
 }
 
+/* Estilo para cada wrapper de galeria */
 .gallery-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    max-width: 100%;
-    justify-content: center;
+    gap: 10px; /* Espaço entre as imagens */
+    display: none; /* Inicialmente oculto, será exibido pelo filtro */
 }
 
+/* Estilo para as imagens da galeria */
 .gallery-img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
+    width: 100px; /* Ajuste a largura da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
     cursor: pointer;
-    transition: transform 0.3s ease;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
 }
 
+/* Efeito ao passar o mouse sobre a imagem */
 .gallery-img:hover {
     transform: scale(1.05);
 }
 
 /* Estilo para o modal */
 .modal {
-    display: none; /* Oculto por padrão */
+    display: none; /* Inicialmente oculto */
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto com opacidade */
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+}
+
+/* Estilo para os botões de navegação do modal */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* Estilo para a imagem no modal */
-.modal-content {
-    margin: auto;
+.modal img {
     display: block;
+    margin: auto;
     max-width: 80%;
     max-height: 80%;
-    transition: transform 0.3s ease;
+}
+.painel-container {
+    max-height: 60vh; /* Define a altura máxima */
+    overflow-y: auto; /* Adiciona rolagem interna se necessário */
+    margin-bottom: 20px; /* Espaço entre os painéis */
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para o botão de fechar o modal */
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Estilo da galeria de imagens */
-.gallery-img {
-    width: 200px;
-    transition: transform 0.3s ease;
-}
-
-/* Efeito de zoom ao passar o mouse */
-.gallery-img:hover {
-    transform: scale(1.1);
-}
-
-/* Estilos gerais do footer */
 footer {
-    background-color: #2c3e50; /* Cor de fundo escura */
-    color: #ecf0f1; /* Texto claro */
-    padding: 30px 0; /* Espaçamento interno */
-    font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
-    border-top: 2px solid #3498db; /* Linha superior azul para destaque */
-    position: relative; /* Necessário para posicionar a assinatura */
+    position: relative; /* Evita que o rodapé sobreponha o conteúdo */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #3a6186;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
+
+body {
+    padding-bottom: 50px; /* Espaço para o rodapé */
+    overflow-y: auto; /* Permite rolar a página se necessário */
+}
+
 
 /* Conteúdo do footer */
 .footer-content {
@@ -487,108 +512,136 @@ footer {
     color: #fff; /* Texto branco para contraste */
 }
 
-/* Estilo da Seção Álbum */
+
+/* Título específico da seção da galeria */
+.album-section .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Títulos em outras seções */
+.another-section .section-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.yet-another-section .section-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* Outros estilos gerais */
 .album-section {
-    padding: 60px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background-image.jpg') no-repeat center center/cover;
-    color: #fff; /* Texto branco para contraste */
+    padding: 20px;
+    background-color: #f9f9f9;
 }
 
-.section-title {
-    font-size: 2.8em;
-    margin-bottom: 40px;
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para destacar o título */
+/* Estilo dos botões dos filtros */
+.gallery-filters button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Efeito ao passar o mouse sobre o botão */
+.gallery-filters button:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* Estilo da galeria */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
     justify-content: center;
+    gap: 10px;
 }
 
 .gallery-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .gallery-img {
-    width: 100%;
+    width: 150px;
     height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .gallery-img:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo do Modal */
+/* Modal e botões de navegação */
 .modal {
     display: none;
     position: fixed;
-    z-index: 999;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
 .modal-content {
-    display: block;
-    margin: auto;
-    max-width: 90%;
+    max-width: 80%;
     max-height: 80%;
-    border-radius: 8px;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    color: #fff;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #f1f1f1;
 }
 
 .prev, .next {
-    cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: #fff;
+    color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 3px;
+    border-radius: 0 3px 3px 0;
     user-select: none;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.prev {
-    left: 0;
+    cursor: pointer;
 }
 
 .next {
     right: 0;
+    border-radius: 3px 0 0 3px;
 }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.close:hover {
+    color: #bbb;
+    text-decoration: none;
+}
+
 
 /* Design Responsivo */
 @media (max-width: 768px) {
@@ -658,22 +711,6 @@ footer {
     .usina-title {
         font-size: 1.8em;
     }
-
-  
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-}
 
 .modal-content {
     max-width: 80%;
@@ -858,6 +895,56 @@ footer {
 .boton-cta:hover {
     background-color: #2980b9; /* Cor mais escura no hover */
     transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background: #f4f4f4;
+    text-decoration: none;
+    color: #333;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #ddd;
+}
+/* Estilo para o contêiner dos filtros */
+.gallery-filters {
+    margin-bottom: 20px;
+    text-align: center; /* Alinha os botões ao centro */
+}
+
+/* Estilo para os botões dos filtros */
+.gallery-filters button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.gallery-filters button:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* Botão ativo (selecionado) */
+.gallery-filters button.active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
 }
 
 </style>
@@ -1047,42 +1134,53 @@ Esta PCH iniciou a sua operação em 2008 e possui uma potência instalada de 29
     <img class="modal-content" id="modal-image">
 </div>
 
-    </section>
-    
-    
- 
-    <section id="album" class="album-section">
-        <h2 class="section-title">Galeria de Imagens</h2>
-        <div class="gallery">
-            <div class="gallery-wrapper">
-                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista aérea TDA" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="imagem aérea" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista aérea TDA" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Santa Clara/01.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Santa Clara/02.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Santa Clara/03.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
-                <img src="icons/Usinas/Santa Clara/05.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
-            </div>
+<section id="album" class="album-section">
+    <h2 class="section-title">Galeria de Imagens</h2>
+    <div class="gallery-filters">
+        <button onclick="filterGallery('all')">Todas</button>
+        <button onclick="filterGallery('arturo')">Arturo Andreoli</button>
+        <button onclick="filterGallery('bocaiuva')">Bocaiuva</button>
+        <button onclick="filterGallery('sao-francisco')">São Francisco</button>
+        <button onclick="filterGallery('santa-clara')">Santa Clara</button>
+    </div>
+    <div class="gallery">
+        <div class="gallery-wrapper arturo">
+            <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI casa de força.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-img aerea.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Arturo Andreoli/PCH-ARTURO-ANDREOLI-jusante.jpg" alt="PCH Arturo Andreoli" class="gallery-img" onclick="openModal(this)">
+            <!-- Outras imagens -->
         </div>
-    
-        <!-- Modal para exibir a imagem em tamanho grande -->
-        <div id="modal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modal-image">
-            <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-            <a class="next" onclick="changeImage(1)">&#10095;</a>
+        <div class="gallery-wrapper bocaiuva">
+            <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CAMARA DE CARGA.jpg" alt="Camara de carga" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-CASA DE FORÇA.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg" alt="Vista aérea TDA" class="gallery-img" onclick="openModal(this)">
+            <!-- Outras imagens -->
         </div>
-    </section>
-    
+        <div class="gallery-wrapper sao-francisco">
+            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-01.jpg" alt="imagem aérea" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-03.jpg" alt="Vista aérea TDA" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <!-- Outras imagens -->
+        </div>
+        <div class="gallery-wrapper santa-clara">
+            <img src="icons/Usinas/Santa Clara/01.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Santa Clara/02.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Santa Clara/03.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <img src="icons/Usinas/Santa Clara/05.JPG" alt="Casa de Força" class="gallery-img" onclick="openModal(this)">
+            <!-- Outras imagens -->
+        </div>
+    </div>
 
-
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
 </section>
+  
 <footer>
     <div class="footer-content">
         <p>&copy; 2024 MCQ Eletroservice. Todos os direitos reservados.</p>
@@ -1099,90 +1197,57 @@ Esta PCH iniciou a sua operação em 2008 e possui uma potência instalada de 29
 </body>
 </html>
 
-<script>// Função para abrir o modal com a imagem ampliada
-    function openModal(img) {
-        var modal = document.getElementById('modal');
-        var modalImg = document.getElementById('modal-image');
-        modal.style.display = "block";
-        modalImg.src = img.src;
-    }
-    
-    // Função para fechar o modal
-    function closeModal() {
-        var modal = document.getElementById('modal');
-        modal.style.display = "none";
-    }
-    
-    // Função para abrir o lightbox
-    function openLightbox(img) {
-        var lightbox = document.getElementById('lightbox');
-        var lightboxImg = document.getElementById('lightbox-img');
-        var caption = document.getElementById('caption');
-        lightbox.style.display = "block";
-        lightboxImg.src = img.src;
-        caption.innerHTML = img.alt;
-    }
-    
-    // Função para fechar o lightbox
-    function closeLightbox() {
-        var lightbox = document.getElementById('lightbox');
-        lightbox.style.display = "none";
-    }
-    
-    // Adiciona event listener ao fechar do lightbox
-    document.querySelector('.close').addEventListener('click', closeLightbox);
-    document.querySelector('.lightbox').addEventListener('click', function(event) {
-        if (event.target === this) {
-            closeLightbox();
-        }
-    });
-    
-    // Adiciona event listener ao fechar do modal
-    document.querySelector('.close-modal').addEventListener('click', closeModal);
-    document.querySelector('.modal').addEventListener('click', function(event) {
-        if (event.target === this) {
-            closeModal();
+<script>
+// Função para filtrar a galeria
+function filterGallery(category) {
+    const allWrappers = document.querySelectorAll('.gallery-wrapper');
+    allWrappers.forEach(wrapper => {
+        if (category === 'all' || wrapper.classList.contains(category)) {
+            wrapper.style.display = 'flex';
+        } else {
+            wrapper.style.display = 'none';
         }
     });
 
-        // album de fotos
-
-    let currentImageIndex = 0;
-
-function openModal(element) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image');
-    const images = document.querySelectorAll('.gallery-img');
-
-    currentImageIndex = Array.from(images).indexOf(element);
-    modalImage.src = element.src;
-    modal.style.display = 'block';
+    // Atualiza a classe ativa nos botões de filtro
+    const filterButtons = document.querySelectorAll('.gallery-filters button');
+    filterButtons.forEach(button => {
+        if (button.textContent.toLowerCase() === category) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
 }
 
+// Variáveis para gerenciar o índice da imagem atual e o modal
+let currentImageIndex = 0;
+let images = [];
+
+// Função para abrir o modal com a imagem ampliada
+function openModal(imgElement) {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-image');
+
+    // Atualiza o índice da imagem atual
+    images = document.querySelectorAll('.gallery-img');
+    currentImageIndex = Array.from(images).indexOf(imgElement);
+
+    // Define a fonte da imagem no modal e exibe o modal
+    modalImg.src = imgElement.src;
+    modal.style.display = 'flex';
+}
+
+// Função para fechar o modal
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
 
+// Função para mudar a imagem no modal
 function changeImage(n) {
-    const images = document.querySelectorAll('.gallery-img');
+    if (images.length === 0) return; // Verifica se há imagens na galeria
     currentImageIndex = (currentImageIndex + n + images.length) % images.length;
     document.getElementById('modal-image').src = images[currentImageIndex].src;
-}
-function openModal(element) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image');
-
-    modalImage.src = element.src;
-    modal.style.display = 'block';
-
-    // Fechar o modal quando o mouse sair da imagem no modal
-    modalImage.onmouseleave = function() {
-        closeModal();
-    };
-}
-
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
 }
 
 // Adiciona event listener ao modal para fechar ao clicar fora da imagem
@@ -1192,4 +1257,24 @@ document.getElementById('modal').addEventListener('click', function(event) {
     }
 });
 
-</script>
+// Adiciona event listener para os botões de navegação no modal
+document.querySelector('.prev').addEventListener('click', function() {
+    changeImage(-1);
+});
+document.querySelector('.next').addEventListener('click', function() {
+    changeImage(1);
+});
+
+// Função para filtrar a galeria
+function filterGallery(category) {
+    const allWrappers = document.querySelectorAll('.gallery-wrapper');
+    allWrappers.forEach(wrapper => {
+        if (category === 'all' || wrapper.classList.contains(category)) {
+            wrapper.style.display = 'flex';
+        } else {
+            wrapper.style.display = 'none';
+        }
+    });
+}
+
+    </script>
