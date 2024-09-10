@@ -13,6 +13,3 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Se a conexão estiver bem-sucedida
-echo "Conexão com o banco de dados realizada com sucesso!";
-

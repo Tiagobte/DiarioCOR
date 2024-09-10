@@ -1,6 +1,4 @@
 <?php
-
-
 // Verifica se estamos em um ambiente Localweb
 if (defined('LOCALWEB_ENV') && LOCALWEB_ENV === true) {
     require_once 'config_localweb.php';
@@ -9,19 +7,10 @@ if (defined('LOCALWEB_ENV') && LOCALWEB_ENV === true) {
     require_once 'config_local.php'; // Arquivo de configuração local
 }
 
-
 session_start();
-
-// Verifica se o usuário está logado e é master
-if (!isset($_SESSION['user_id']) || !$_SESSION['is_master']) {
-    header('Location: login.php');
-    exit();
-}
 
 // Conectar ao banco de dados
 $conn = new mysqli('localhost', 'root', '', 'diariocor');
-
-// Verifica se houve erro de conexão
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
@@ -48,10 +37,9 @@ if (isset($_GET['reject'])) {
     exit();
 }
 
-// Consulta usuários não aprovados
-$sql = "SELECT id, username, email, name, phone FROM users WHERE approved = 0";
+// Buscar usuários não aprovados
+$sql = "SELECT id, email, nome, telefone FROM users WHERE approved = 0";
 $result = $conn->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -59,38 +47,45 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprovação de Usuários - Diário COR</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS -->
+    <title>Painel de Administração</title>
+    <style>
+        /* Adicione seu estilo aqui */
+    </style>
 </head>
 <body>
-    <div class="approval-container">
-        <h2>Aprovação de Usuários</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Usuário</th>
-                    <th>Email</th>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($row['username']); ?></td>
-                    <td><?php echo htmlspecialchars($row['email']); ?></td>
-                    <td><?php echo htmlspecialchars($row['name']); ?></td>
-                    <td><?php echo htmlspecialchars($row['phone']); ?></td>
-                    <td>
-                        <a href="approve_users.php?approve=<?php echo $row['id']; ?>">Aprovar</a> | 
-                        <a href="approve_users.php?reject=<?php echo $row['id']; ?>">Rejeitar</a>
-                    </td>
-                </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-    </div>
+    <h1>Aprovação de Usuários</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Email</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>{$row['id']}</td>";
+                    echo "<td>{$row['email']}</td>";
+                    echo "<td>{$row['nome']}</td>";
+                    echo "<td>{$row['telefone']}</td>";
+                    echo "<td>
+                            <a href='admin_panel.php?approve={$row['id']}'>Aprovar</a> | 
+                            <a href='admin_panel.php?reject={$row['id']}'>Rejeitar</a>
+                          </td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>Nenhum usuário encontrado.</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+    <a href="index.php">Retornar</a>
 </body>
 </html>
 
