@@ -1,22 +1,26 @@
 <?php
-session_start(); // Inicia a sessão
+// Definir o caminho da sessão
+ini_set('session.save_path', '/home/storage/0/2a/3a/mcq2/public_html/sessions');
 
-// Destrói todas as variáveis de sessão
-$_SESSION = array();
+// Iniciar o buffer de saída
+ob_start();
 
-// Se for necessário destruir o cookie de sessão
-if (ini_get("session.use_cookies")) {
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"]
-    );
+// Iniciar a sessão
+session_start();
+
+// Verificar se a sessão foi iniciada corretamente
+if (!isset($_SESSION)) {
+    echo "Erro ao iniciar a sessão.";
+    exit();
 }
 
-// Destrói a sessão
+// Destruir a sessão
 session_destroy();
 
-// Redireciona para a página de login
+// Redirecionar para a página de login
 header("Location: login.php");
 exit();
 
+// Limpar o buffer de saída
+ob_end_flush();
+?>

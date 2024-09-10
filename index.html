@@ -108,7 +108,7 @@
     </body>
     
     <section id="usinas" class="usinas-section">
-        <h2 class="section-title">Estamos Presentes (O&M)</h2>
+        <h2 class="section-title">Alguns empreendimentos que Estamos Presentes na Operação e Manutenção (O&M)</h2>
 
                <!-- PCH Alto Sucuriu -->
                <div class="usinas-content">
@@ -258,17 +258,39 @@ Esta PCH iniciou a sua operação em 2008 e possui uma potência instalada de 29
 </body>
 </html>
 
-<script>
+
+ <script>
 // Array com as imagens do slideshow
 const images = [
+    "icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg",
+    "icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg",
+    "icons/Usinas/PCH Alto Sucuriú/PCH-ALTO-SUCURIU-04.jpg",
     "icons/Aplicação de LP.jpg",
     "icons/container.jpg",
     "icons/segunda imagen.jpg",
     "icons/site mcq.jpg",
-    "icons/Centro de Operação MCQ.jpeg",
     "icons/COR.jpeg"
 ];
 
+// Função para inicializar o slideshow
+function initSlideshow() {
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    images.forEach((image, index) => {
+        const imgElement = document.createElement('img');
+        imgElement.src = image;
+        if (index >= images.length - 2) {
+            imgElement.classList.add('small-image'); // Adiciona a classe para as últimas duas imagens
+        }
+        slideshowContainer.appendChild(imgElement);
+    });
+}
+
+// Inicializa o slideshow quando a página carregar
+window.onload = initSlideshow;
+
+
+    // Inicializa o slideshow quando a página carregar
+    window.onload = initSlideshow;
 let currentIndex = 0;
 const slideshow = document.getElementById('slideshow-image');
 

@@ -1,14 +1,32 @@
 <?php
+ini_set('session.save_path', '/home/storage/0/2a/3a/mcq2/public_html/sessions');
+
+
 session_start();
+$is_master = isset($_SESSION['is_master']) ? $_SESSION['is_master'] : 0;
+
+// Mostrar erros de conexão
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifique se os índices existem
     $username = isset($_POST['username']) ? $_POST['username'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // Conectar ao banco de dados
-    $conn = new mysqli('localhost', 'root', '', 'diariocor');
+    // Conectar ao banco de dados remoto
+    $servername = '186.202.152.237'; // Substitua pelo seu servidor remoto
+    $db_username = 'diariocor'; // Seu nome de usuário do banco de dados remoto
+    $db_password = 'Mcq@134'; // Sua senha do banco de dados
+    $dbname = 'diariocor'; // O nome do banco de dados
 
+    // Conectar ao banco de dados remoto
+    $conn = new mysqli($servername, $db_username, $db_password, $dbname);
+
+    // Verifica se houve erro de conexão
     if ($conn->connect_error) {
         die("Falha na conexão: " . $conn->connect_error);
     }
@@ -41,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

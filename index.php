@@ -1,4 +1,8 @@
 <?php
+
+ini_set('session.save_path', '/home/storage/0/2a/3a/mcq2/public_html/sessions');
+
+
 session_start();
 $is_master = isset($_SESSION['is_master']) ? $_SESSION['is_master'] : 0;
 ?>
@@ -234,7 +238,7 @@ $is_master = isset($_SESSION['is_master']) ? $_SESSION['is_master'] : 0;
         <div class="menu-container">
             <button id="btn-nested-menu1" class="menu-button" onclick="toggleNestedContent('nested-menu-content1')">Controle de Intervenção Ilha 01</button>
             <button id="btn-nested-menu2" class="menu-button" onclick="toggleNestedContent('nested-menu-content2')">Controle de Intervenção Ilha 02</button>
-            <!--
+<!--
             <button id="btn-nested-menu3" class="menu-button" onclick="toggleNestedContent('nested-menu-content3')">Lista de Alarmes Recorrentes Ilha 01</button>
             <button id="btn-nested-menu4" class="menu-button" onclick="toggleNestedContent('nested-menu-content4')">Lista de Alarmes Recorrentes Ilha 02</button>
  -->
