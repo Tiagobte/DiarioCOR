@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build project
+        run: |
+          # Comando para construir o projeto e gerar o diretório dist
+          # Por exemplo: npm run build ou make build
+          npm run build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          localDir: dist
+          remoteDir: /caminho/para/seu/projeto
+          server: ftp.mcq.com.br
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          forceSsl: false
