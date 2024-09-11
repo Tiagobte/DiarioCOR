@@ -1,5 +1,4 @@
 <?php
-
 // Configuração do caminho das sessões, dependendo do ambiente
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
     ini_set('session.save_path', 'C:/xampp/tmp'); // Caminho local para sessões (Windows)
@@ -15,19 +14,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = isset($_POST['username']) ? $_POST['username'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // Verifica se estamos no localhost ou no servidor da Localweb
+    // Configurações de banco de dados dependendo do ambiente
     if ($_SERVER['SERVER_NAME'] == 'localhost') {
-        // Configurações de banco de dados para localhost
         $servername = 'localhost';
         $db_username = 'root';
         $db_password = ''; // Defina sua senha local, se houver
         $dbname = 'diariocor';
     } else {
-        // Configurações de banco de dados para Localweb
-        $servername = '186.202.152.237';
-        $db_username = 'diariocor';
-        $db_password = 'Mcq@134';
-        $dbname = 'diariocor';
+        $servername = '186.202.152.237'; // Servidor remoto
+        $db_username = 'diariocor'; // Nome de usuário remoto
+        $db_password = 'Mcq@134'; // Senha do banco de dados remoto
+        $dbname = 'diariocor'; // Nome do banco de dados remoto
     }
 
     // Conectar ao banco de dados
@@ -68,12 +65,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- Estilo CSS -->
     <style>
         /* Reset básico */
         * {
@@ -85,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         /* Estilos da página */
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2980b9, #6a11cb); /* Gradiente suave de fundo */
+            background: linear-gradient(135deg, #2980b9, #6a11cb); /* Gradiente suave */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -104,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             text-align: center;
         }
 
-        /* Estilo do título */
+        /* Título */
         h2 {
             font-size: 2.2em;
             color: #333;
@@ -112,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-weight: 600;
         }
 
-        /* Estilo dos grupos de input */
+        /* Input */
         .input-group {
             margin-bottom: 20px;
             text-align: left;
@@ -128,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .input-group input {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1em;
@@ -157,7 +156,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         input[type="submit"]:hover {
             background-color: #5a0fbf;
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         /* Mensagem de erro */
@@ -182,17 +180,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .register-link a:hover {
             color: #5a0fbf;
             text-decoration: underline;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .login-container {
-                padding: 30px 20px;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
         }
     </style>
 </head>

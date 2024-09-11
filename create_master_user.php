@@ -2,12 +2,11 @@
 
 
 
-// Verifica se estamos em um ambiente Localweb
-if (defined('LOCALWEB_ENV') && LOCALWEB_ENV === true) {
-    require_once 'config_localweb.php';
+// Inclui o arquivo correto dependendo do ambiente
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+    require_once 'config_local.php'; // Conexão para localhost
 } else {
-    // Configuração local ou padrão
-    require_once 'config_local.php'; // Arquivo de configuração local
+    require_once 'config_localweb.php'; // Conexão para Localweb
 }
 
 

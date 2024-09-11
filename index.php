@@ -1,23 +1,22 @@
 <?php
+// Configuração do caminho das sessões
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+    ini_set('session.save_path', 'C:/xampp/tmp');
+} else {
+    ini_set('session.save_path', '/home/storage/0/2a/3a/mcq2/public_html/sessions');
+}
 
-ini_set('session.save_path', '/home/storage/0/2a/3a/mcq2/public_html/sessions');
 session_start();
-
 
 // Verificação de autenticação do usuário
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    // Se não estiver autenticado, redireciona para a página de login
     header('Location: login.php');
     exit();
 }
 
-// Mensagem de depuração (remova ou comente após a validação)
-// echo '<!-- Sessão está ativa. -->';
-
-// Verifica se o usuário é um administrador (master)
+// Verifica se o usuário é master
 $is_master = isset($_SESSION['is_master']) && $_SESSION['is_master'] == 1;
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">

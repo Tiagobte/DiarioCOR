@@ -1,17 +1,21 @@
 <?php
-
-
-// Verifica se estamos em um ambiente Localweb
-if (defined('LOCALWEB_ENV') && LOCALWEB_ENV === true) {
-    require_once 'config_localweb.php';
+// Verifica se estamos em um ambiente Localweb ou localhost
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+    // Configurações para ambiente local (localhost)
+    $servername = 'localhost';
+    $db_username = 'root'; // Usuário do MySQL local
+    $db_password = ''; // Senha do MySQL local (normalmente em branco)
+    $dbname = 'diariocor'; // Nome do banco de dados local
 } else {
-    // Configuração local ou padrão
-    require_once 'config_local.php'; // Arquivo de configuração local
+    // Configurações para ambiente de produção (Localweb)
+    $servername = '186.202.152.237'; // IP do servidor MySQL na Localweb
+    $db_username = 'diariocor'; // Usuário do MySQL na Localweb
+    $db_password = 'Mcq@134'; // Senha do MySQL na Localweb
+    $dbname = 'diariocor'; // Nome do banco de dados na Localweb
 }
 
-
 // Conexão com o banco de dados
-$conn = new mysqli('localhost', 'root', '', 'diariocor');
+$conn = new mysqli($servername, $db_username, $db_password, $dbname);
 
 // Verifica se houve erro na conexão
 if ($conn->connect_error) {
