@@ -1,16 +1,3 @@
-<?php
-session_start();
-
-// Verificação de autenticação do usuário
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    // Se não estiver autenticado, redireciona para a página de login
-    header('Location: login.php');
-    exit();
-}
-
-// Mensagem de depuração (remova ou comente após a validação)
-echo '<!-- Sessão está ativa. -->';
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,13 +10,17 @@ echo '<!-- Sessão está ativa. -->';
     <link rel="stylesheet" href="css/style_html.css">
 </head>
 <body>
-    <header class="header">
-        <div class="slideshow-container">
-            <img id="slideshow-image" src="icons/Aplicação de LP.jpg" alt="Slideshow Image" class="slideshow">
-        </div>
+    <header>
+        <img id="slideshow-image" src="" alt="Slideshow Image">
     </header>
-    
-    
+
+    <!-- Modal para exibir imagens ampliadas -->
+    <div id="modal">
+        <span class="prev">&#10094;</span>
+        <img id="modal-image" src="">
+        <span class="next">&#10095;</span>
+    </div>
+
     <div class="header-container">
         <!-- Navegação à esquerda -->
         <nav class="nav-left">
@@ -272,159 +263,41 @@ Esta PCH iniciou a sua operação em 2008 e possui uma potência instalada de 29
 </html>
 
 
- <script>
-// Array com as imagens do slideshow
-const images = [
-    "icons/Usinas/Bocaiuva/PCH-BOCAIUVA-TDA.jpg",
-    "icons/Usinas/São Francisco/PCH-SAO-FRANCISCO-02-1600x900.jpg",
-    "icons/Usinas/PCH Alto Sucuriú/PCH-ALTO-SUCURIU-04.jpg",
-    "icons/Aplicação de LP.jpg",
-    "icons/container.jpg",
-    "icons/segunda imagen.jpg",
-    "icons/site mcq.jpg",
-    "icons/COR.jpeg"
-];
+<script>
+    // Array com as imagens do slideshow
+    let images = [
+      
+        "icons/Aplicação de LP.jpg",
+        "icons/container.jpg",
+        "icons/segunda imagen.jpg",
+        "icons/site mcq.jpg"
+    ];
 
-// Função para inicializar o slideshow
-function initSlideshow() {
-    const slideshowContainer = document.querySelector('.slideshow-container');
-    images.forEach((image, index) => {
-        const imgElement = document.createElement('img');
-        imgElement.src = image;
-        if (index >= images.length - 2) {
-            imgElement.classList.add('small-image'); // Adiciona a classe para as últimas duas imagens
-        }
-        slideshowContainer.appendChild(imgElement);
-    });
-}
+    let currentIndex = 0;
+    const slideshow = document.getElementById('slideshow-image');
 
-// Inicializa o slideshow quando a página carregar
-window.onload = initSlideshow;
-
-
-    // Inicializa o slideshow quando a página carregar
-    window.onload = initSlideshow;
-let currentIndex = 0;
-const slideshow = document.getElementById('slideshow-image');
-
-function updateSlide() {
-    // Atualiza a fonte da imagem
-    slideshow.src = images[currentIndex];
-    slideshow.classList.add('active'); // Adiciona a classe 'active'
-    
-    // Remove a classe 'active' após a transição
-    setTimeout(() => {
-        slideshow.classList.remove('active');
-    }, 500); // Tempo menor que a duração da transição
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateSlide();
-}
-
-function previousSlide() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateSlide();
-}
-
-// Inicia o slideshow
-updateSlide();
-setInterval(nextSlide, 8000); // Troca de slide a cada 5 segundos
-
-
-// Função para atualizar a imagem do slideshow
-function updateSlide() {
-    // Remove a classe 'fade-in' da imagem atual
-    slideshow.classList.remove('fade-in');
-    
-    // Aplica zoom e faz a imagem desaparecer
-    slideshow.style.opacity = 0;
-    slideshow.style.transform = 'scale(1.1)'; // Aplica um leve zoom na imagem atual
-
-    // Atualiza o src da imagem
-    slideshow.src = images[currentIndex];
-    
-    // Força a atualização da imagem
-    setTimeout(() => {
-        slideshow.style.opacity = 1;
-        slideshow.style.transform = 'scale(1)'; // Retorna ao tamanho normal
-        slideshow.classList.add('fade-in');
-    }, 200); // Um pequeno atraso para garantir que a transição ocorra
-
-    // Avança para a próxima imagem
-    currentIndex = (currentIndex + 1) % images.length;
-}
-
-
-// Inicia o slideshow quando a página carregar
-window.onload = startSlideshow;
-
-// Função para filtrar a galeria
-function filterGallery(category) {
-    const allWrappers = document.querySelectorAll('.gallery-wrapper');
-    allWrappers.forEach(wrapper => {
-        if (category === 'all' || wrapper.classList.contains(category)) {
-            wrapper.style.display = 'flex';
-        } else {
-            wrapper.style.display = 'none';
-        }
-    });
-
-    // Atualiza a classe ativa nos botões de filtro
-    const filterButtons = document.querySelectorAll('.gallery-filters button');
-    filterButtons.forEach(button => {
-        if (button.textContent.toLowerCase() === category) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
-    });
-}
-
-// Variáveis para gerenciar o índice da imagem atual e o modal
-let currentImageIndex = 0;
-let galleryImages = [];
-
-// Função para abrir o modal com a imagem ampliada
-function openModal(imgElement) {
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-image');
-
-    // Atualiza o índice da imagem atual
-    galleryImages = document.querySelectorAll('.gallery-img');
-    currentImageIndex = Array.from(galleryImages).indexOf(imgElement);
-
-    // Define a fonte da imagem no modal e exibe o modal
-    modalImg.src = imgElement.src;
-    modal.style.display = 'flex';
-}
-
-// Função para fechar o modal
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-// Função para mudar a imagem no modal
-function changeImage(n) {
-    if (galleryImages.length === 0) return; // Verifica se há imagens na galeria
-    currentImageIndex = (currentImageIndex + n + galleryImages.length) % galleryImages.length;
-    document.getElementById('modal-image').src = galleryImages[currentImageIndex].src;
-}
-
-// Adiciona event listener ao modal para fechar ao clicar fora da imagem
-document.getElementById('modal').addEventListener('click', function(event) {
-    if (event.target === this) {
-        closeModal();
+    // Função para atualizar o slide
+    function updateSlide() {
+        slideshow.classList.remove('fade-in');
+        slideshow.style.opacity = 0;
+        setTimeout(() => {
+            slideshow.src = images[currentIndex];
+            slideshow.style.opacity = 1;
+            slideshow.classList.add('fade-in');
+        }, 200);
     }
-});
 
-// Adiciona event listener para os botões de navegação no modal
-document.querySelector('.prev').addEventListener('click', function() {
-    changeImage(-1);
-});
-document.querySelector('.next').addEventListener('click', function() {
-    changeImage(1);
-});
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide();
+    }
 
-    </script>
+    function previousSlide() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlide();
+    }
+
+    // Inicializa o slideshow
+    updateSlide();
+    setInterval(nextSlide, 5000); // Troca de slide a cada 5 segundos
+</script>
